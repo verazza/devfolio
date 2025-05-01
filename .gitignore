@@ -1,6 +1,6 @@
 wrangler.toml
 .wrangler/
-src/*.js
+src/**/*.js
 *~
 *.bundle.js
 test.*
