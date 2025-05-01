@@ -7,6 +7,9 @@ I wanna create static site in cloudflare worker, therefore I adopted [hono](http
 - cloudflare  
 see [https://verazza.work/](https://verazza.work/)
 
+## Credits
+This project uses other external assets someone creates - see the [CREDITS](CREDITS)
+
 ## License
 This project as a whole is licensed under the MIT License.  
 See the [LICENSE](LICENSE) file in the root directory for details.  
