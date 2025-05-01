@@ -1,3 +1,6 @@
 name = "hono-worker"
 main = "./src/index.ts"
 compatibility_date = "2025-05-01"
+
+[site]
+bucket = "./public"
