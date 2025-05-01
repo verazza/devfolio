@@ -1,0 +1,43 @@
+{
+  "name": "hono-web",
+  "version": "1.0.0",
+  "description": "",
+  "homepage": "https://github.com/verazza/hono-web#readme",
+  "bugs": {
+    "url": "https://github.com/verazza/hono-web/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/verazza/hono-web.git"
+  },
+  "license": "MIT",
+  "author": "verazza",
+  "compilerOptions": {
+    "target": "ESNext",
+    "module": "ESNext",
+    "moduleResolution": "Node",
+    "esModuleInterop": true,
+    "forceConsistentCasingInFileNames": true,
+    "strict": true,
+    "skipLibCheck": true,
+    "jsx": "react"
+  },
+  "include": [
+    "src"
+  ],
+  "exclude": [
+    "node_modules"
+  ],
+  "scripts": {
+    "dev": "wrangler dev",
+    "deploy": "wrangler deploy",
+    "build": "tsc"
+  },
+  "dependencies": {
+    "hono": "^4.7.8"
+  },
+  "devDependencies": {
+    "typescript": "^5.8.3",
+    "wrangler": "^4.13.2"
+  }
+}
