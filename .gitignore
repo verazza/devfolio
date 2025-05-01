@@ -1,3 +1,5 @@
+.wrangler/
+src/*.js
 *~
 *.bundle.js
 test.*
