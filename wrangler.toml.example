@@ -7,4 +7,4 @@ bucket = "./public"
 
 [[kv_namespaces]]
 binding = "__STATIC_CONTENT"
-id = "${MY_SECRET_API_KEY}"
+id = "ENTER YOUR MY_SECRET_API_KEY"
