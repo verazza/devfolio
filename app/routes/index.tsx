@@ -1,6 +1,6 @@
 import { createRoute } from 'honox/factory'
 import Counter from '../islands/counter'
-import Footer from '../islands/Footer';
+import Footer from '../islands/footer';
 
 export default createRoute(async (c) => {
   const name = c.req.query('name') ?? 'Hono'
