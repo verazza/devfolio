@@ -7,7 +7,7 @@ declare module 'hono' {
     }
     Bindings: {
       CONFIG?: KVNamespace;
-      DB?: D1Database
+      DB?: D1Database;
     }
   }
 }
