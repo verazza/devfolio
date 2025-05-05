@@ -21,10 +21,8 @@
   },
   "private": true,
   "dependencies": {
-    "@types/jsonwebtoken": "^9.0.9",
     "hono": "^4.7.8",
-    "honox": "^0.1.40",
-    "jsonwebtoken": "^9.0.2"
+    "honox": "^0.1.40"
   },
   "devDependencies": {
     "@cloudflare/workers-types": "^4.20250214.0",
