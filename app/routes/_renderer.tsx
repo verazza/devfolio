@@ -15,8 +15,8 @@ export default jsxRenderer(({ children }) => {
         <Script src="/app/client.ts" async />
       </head>
       <body class="font-sans antialiased bg-gray-900 text-gray-100">
-        <HamburgerNav />
         <main class="max-w-4xl mx-auto p-4 bg-gray-800 shadow-md rounded-md flex-grow">
+          <HamburgerNav />
           {children}
           <footer class="mt-12 text-center text-gray-400 bg-gray-800 border-t border-gray-700 py-6 shadow-inner">
             <p>&copy; {new Date().getFullYear()} {profile.name}</p>
