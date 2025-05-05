@@ -14,13 +14,15 @@ export default jsxRenderer(({ children }) => {
         <Link href="/app/style.css" rel="stylesheet" />
         <Script src="/app/client.ts" async />
       </head>
-      <body class="font-sans antialiased bg-gray-100 text-gray-900">
+      <body class="font-sans antialiased bg-gray-900 text-gray-100">
         <HamburgerNav />
-        {children}
+        <main class="max-w-4xl mx-auto p-4 bg-gray-800 shadow-md rounded-md flex-grow">
+          {children}
+          <footer class="mt-12 text-center text-gray-400 bg-gray-800 border-t border-gray-700 py-6 shadow-inner">
+            <p>&copy; {new Date().getFullYear()} {profile.name}</p>
+          </footer>
+        </main>
       </body>
-      <footer class="mt-12 text-center text-gray-500">
-        <p>&copy; {new Date().getFullYear()} {profile.name}</p>
-      </footer>
     </html>
   )
 })
