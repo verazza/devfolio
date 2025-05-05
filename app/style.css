@@ -4,13 +4,6 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Kosugi+Maru&display=swap');
 
-@font-face {
-  font-family: 'kosugi_maru';
-  src: url('/fonts/kosugi_maru/KosugiMaru-Regular.ttf') format('truetype');
-  font-weight: normal;
-  font-style: normal;
-}
-
 body {
   font-family: 'Kosugi Maru', sans-serif;
   -webkit-font-smoothing: antialiased;
