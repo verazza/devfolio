@@ -15,11 +15,11 @@ export default createRoute(async (c) => {
       <body class="font-sans antialiased bg-gray-100 text-gray-900">
         <nav class="bg-gray-200 py-4">
           <div class="container mx-auto px-4 sm:px-6 lg:px-8">
-            <ul class="flex justify-center space-x-8">
-              <li><Link href="/" class="text-gray-700 hover:text-blue-500">HOME</Link></li>
-              <li><Link href="/about" class="text-gray-700 hover:text-blue-500">ABOUT</Link></li>
-              <li><Link href="/projects" class="text-gray-700 hover:text-blue-500">PROJECTS</Link></li>
-              <li><Link href="/contact" class="text-gray-700 hover:text-blue-500">CONTACT</Link></li>
+            <ul class="flex justify-center space-x-16 list-none">
+              <li><a href="/" class="text-gray-700 hover:text-blue-500">HOME</a></li>
+              <li><a href="/about" class="text-gray-700 hover:text-blue-500">ABOUT</a></li>
+              <li><a href="/projects" class="text-gray-700 hover:text-blue-500">PROJECTS</a></li>
+              <li><a href="/contact" class="text-gray-700 hover:text-blue-500">CONTACT</a></li>
             </ul>
           </div>
         </nav>
