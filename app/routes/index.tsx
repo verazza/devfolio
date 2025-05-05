@@ -11,9 +11,6 @@ export default createRoute(async (c) => {
           <p class="mt-4">{profile.introduction}</p>
         </header>
       </div>
-      <footer class="mt-12 text-center text-gray-500">
-        <p>&copy; {new Date().getFullYear()} {profile.name}</p>
-      </footer>
     </>
   );
 });
