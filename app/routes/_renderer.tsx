@@ -1,7 +1,7 @@
 import { jsxRenderer } from 'hono/jsx-renderer'
 import { Link, Script } from 'honox/server'
 import profile from '../../data/profile.json'
-import Navi from '../islands/Navi'
+import HamburgerNav from '../islands/HamburgerNav';
 
 export default jsxRenderer(({ children }) => {
   return (
@@ -15,7 +15,7 @@ export default jsxRenderer(({ children }) => {
         <Script src="/app/client.ts" async />
       </head>
       <body class="font-sans antialiased bg-gray-100 text-gray-900">
-        <Navi />
+        <HamburgerNav />
         {children}
       </body>
       <footer class="mt-12 text-center text-gray-500">
