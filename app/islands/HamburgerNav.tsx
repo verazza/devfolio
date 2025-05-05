@@ -9,11 +9,11 @@ const HamburgerNav = () => {
   };
 
   return (
-    <nav class="bg-gray-200 py-4 relative">
+    <nav class="bg-gray-800 py-4 relative">
       <div class="container mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between">
-        <div class="text-gray-800 font-bold text-xl">{profile.name}</div>
+        <div class="text-gray-100 font-bold text-xl">{profile.name}</div>
         <div class="md:hidden">
-          <button onClick={toggleMenu} class="focus:outline-none">
+          <button onClick={toggleMenu} class="focus:outline-none text-grey-100">
             <svg class="w-6 h-6 fill-current text-gray-700" viewBox="0 0 24 24">
               {isOpen ? (
                 <path fillRule="evenodd" clipRule="evenodd" d="M18.278 16.864a1 1 0 0 1-1.414 1.414l-4.829-4.828-4.828 4.828a1 1 0 0 1-1.414-1.414l4.828-4.829-4.828-4.828a1 1 0 0 1 1.414-1.414l4.829 4.828 4.828-4.828a1 1 0 0 1 1.414 1.414l-4.828 4.829z" />
@@ -24,18 +24,18 @@ const HamburgerNav = () => {
           </button>
         </div>
         <div class={`hidden md:flex space-x-8`}>
-          <a href="/" class="text-gray-700 hover:text-blue-500">HOME</a>
-          <a href="/about" class="text-gray-700 hover:text-blue-500">ABOUT</a>
-          <a href="/projects" class="text-gray-700 hover:text-blue-500">PROJECTS</a>
-          <a href="/contact" class="text-gray-700 hover:text-blue-500">CONTACT</a>
+          <a href="/" class="text-gray-300 hover:text-blue-500">HOME</a>
+          <a href="/about" class="text-gray-300 hover:text-blue-500">ABOUT</a>
+          <a href="/projects" class="text-gray-300 hover:text-blue-500">PROJECTS</a>
+          <a href="/contact" class="text-gray-300 hover:text-blue-500">CONTACT</a>
         </div>
         {isOpen && (
-          <div class="md:hidden absolute top-full left-0 w-full bg-gray-200 shadow-md z-10">
+          <div class="md:hidden absolute top-full left-0 w-full bg-gray-800 shadow-md z-10">
             <div class="px-4 py-2 flex flex-col items-center space-y-2">
-              <a href="/" class="text-gray-700 hover:text-blue-500">HOME</a>
-              <a href="/about" class="text-gray-700 hover:text-blue-500">ABOUT</a>
-              <a href="/projects" class="text-gray-700 hover:text-blue-500">PROJECTS</a>
-              <a href="/contact" class="text-gray-700 hover:text-blue-500">CONTACT</a>
+              <a href="/" class="text-gray-300 hover:text-blue-500">HOME</a>
+              <a href="/about" class="text-gray-300 hover:text-blue-500">ABOUT</a>
+              <a href="/projects" class="text-gray-300 hover:text-blue-500">PROJECTS</a>
+              <a href="/contact" class="text-gray-300 hover:text-blue-500">CONTACT</a>
             </div>
           </div>
         )}
