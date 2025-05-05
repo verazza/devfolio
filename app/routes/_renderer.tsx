@@ -18,6 +18,9 @@ export default jsxRenderer(({ children }) => {
         <Navi />
         {children}
       </body>
+      <footer class="mt-12 text-center text-gray-500">
+        <p>&copy; {new Date().getFullYear()} {profile.name}</p>
+      </footer>
     </html>
   )
 })
