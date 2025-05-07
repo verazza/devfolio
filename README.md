@@ -5,7 +5,7 @@ I wanna create static site in cloudflare worker, therefore I adopted [hono](http
 Repo: [blog](https://github.com/verazza/blog) to include from __05/07/2025__.
 
 ## Deploy
-- cloudflare  
+- cloudflare/workers  
 see [https://verazza.work/](https://verazza.work/)
 
 ## Credits
