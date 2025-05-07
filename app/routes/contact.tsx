@@ -1,6 +1,30 @@
 import { createRoute } from 'honox/factory';
 import profile from '../../data/profile.json';
 
+function ContactMethod({
+  name,
+  href,
+  label,
+}: {
+  name: string;
+  href: string;
+  label: string;
+}) {
+  return (
+    <div>
+      <p class="text-sm text-gray-500">{name}</p>
+      <a
+        href={href}
+        target="_blank"
+        rel="noopener noreferrer"
+        class="text-gray-300 hover:text-white transition duration-200"
+      >
+        {label}
+      </a>
+    </div>
+  );
+}
+
 export default createRoute(async (c) => {
   return c.render(
     <>
@@ -8,12 +32,24 @@ export default createRoute(async (c) => {
       <div class="mx-auto py-16 px-4 sm:px-6 lg:px-8 max-w-3xl">
         <header class="text-center">
           <h1 class="text-3xl font-bold">Contact</h1>
-          <p class="mt-2 text-gray-600">連絡や問い合わせは以下から。</p>
+          <p class="mt-2 text-gray-600">連絡や問い合わせは以下からお願いします。</p>
         </header>
-        <section class="mt-8 flex flex-col items-center">
-          <a href={profile.link.x} target="_blank" rel="noopener noreferrer" class="text-gray-300 hover:text-white transition duration-200">X-@verazza_</a>
-          <span class="mt-2">または</span>
-          <a href={`mailto:${profile.contact.email}`} class="mt-2 text-gray-300 hover:text-white transition duration-200">{profile.contact.email}</a>
+        <section class="mt-8 space-y-4 text-center">
+          <ContactMethod
+            name="Discord"
+            href={profile.link.discord}
+            label="@verazza"
+          />
+          <ContactMethod
+            name="X (旧Twitter)"
+            href={profile.link.x}
+            label="@verazza_"
+          />
+          <ContactMethod
+            name="メール"
+            href={`mailto:${profile.contact.email}`}
+            label={profile.contact.email}
+          />
         </section>
       </div>
     </>
