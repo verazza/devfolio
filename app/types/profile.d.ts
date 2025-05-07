@@ -1,18 +1,15 @@
 declare module '../../data/profile.json' {
-  interface Skill {
-    name: string;
-    level: string;
-  }
-
-  interface Project {
-    name: string;
-    url: string;
-  }
-
-  interface Social {
+  interface Link {
     github?: string;
     blog?: string;
-    twitter?: string;
+    x?: string;
+  }
+
+  interface OGP {
+    title?: string;
+    description?: string;
+    image?: string;
+    url?: string;
   }
 
   interface Contact {
@@ -21,11 +18,10 @@ declare module '../../data/profile.json' {
 
   interface ProfileData {
     name: string;
+    policy: string;
     title: string;
-    introduction: string;
-    skills: Skill[];
-    projects: Project[];
-    social: Social;
+    og: OGP;
+    link: Social;
     contact: Contact;
   }
 

@@ -1,22 +1,19 @@
 {
-  "name": "あなたの名前",
-  "title": "あなたの肩書き",
-  "introduction": "簡単な自己紹介文",
-  "skills": [
-    {"name": "JavaScript", "level": "熟練"},
-    {"name": "Hono", "level": "得意"},
-    {"name": "Cloudflare Workers", "level": "得意"}
-  ],
-  "projects": [
-    {"name": "プロジェクトA", "url": "#"},
-    {"name": "プロジェクトB", "url": "#"}
-  ],
-  "social": {
-    "github": "https://github.com/your-github",
-    "blog": "https://your-blog.com",
-    "twitter": "https://twitter.com/your-twitter"
+  "name": "",
+  "title": "",
+  "policy": "",
+  "og": {
+    "title": "",
+    "description": "",
+    "image": "",
+    "url": ""
+  },
+  "link": {
+    "github": "",
+    "x": "",
+    "qiita": ""
   },
   "contact": {
-    "email": "your-email@example.com"
+    "email": ""
   }
 }
