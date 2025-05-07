@@ -15,7 +15,13 @@ export default createRoute(async (c) => {
           <p>
             &emsp;verazzaです。ある種のソフトウェアエンジニアと言っていいのかわかりませんが、
             <br />
-            ポリシーは、「{profile.policy}」です。
+            私のポリシーは、
+          </p>
+          <p class="mt-6 text-lg text-gray-300 text-center">
+            「{profile.policy}」
+          </p>
+          <p>
+            です。
             <br /><br />
             別に、特段、VSCodeを毛嫌いしているわけではないんですよ？
             <br /><br />
