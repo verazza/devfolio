@@ -27,6 +27,7 @@ const HamburgerNav = () => {
           <a href="/" class="text-gray-300 hover:text-blue-500">HOME</a>
           <a href="/about" class="text-gray-300 hover:text-blue-500">ABOUT</a>
           <a href="/projects" class="text-gray-300 hover:text-blue-500">PROJECTS</a>
+          <a href="/services" class="text-gray-300 hover:text-blue-500">SERVICES</a>
           <a href="/contact" class="text-gray-300 hover:text-blue-500">CONTACT</a>
         </div>
         {isOpen && (
@@ -35,6 +36,7 @@ const HamburgerNav = () => {
               <a href="/" class="text-gray-300 hover:text-blue-500">HOME</a>
               <a href="/about" class="text-gray-300 hover:text-blue-500">ABOUT</a>
               <a href="/projects" class="text-gray-300 hover:text-blue-500">PROJECTS</a>
+              <a href="/services" class="text-gray-300 hover:text-blue-500">SERVICES</a>
               <a href="/contact" class="text-gray-300 hover:text-blue-500">CONTACT</a>
             </div>
           </div>
