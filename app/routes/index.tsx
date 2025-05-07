@@ -5,7 +5,7 @@ export default createRoute(async (c) => {
   return c.render(
     <>
       <div class="mx-auto py-16 px-4 sm:px-6 lg:px-8 max-w-3xl text-center">
-        <h1 class="text-4xl font-bold">{profile.name}</h1>
+        <h1 class="text-3xl font-bold">Home</h1>
         <p class="text-xl text-gray-400 mt-2">{profile.title}</p>
         <p class="mt-6 text-lg text-gray-300">
           {profile.policy}

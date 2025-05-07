@@ -29,7 +29,7 @@ export default jsxRenderer(({ children }) => {
           <HamburgerNav />
           {children}
           <footer class="mt-12 text-center text-gray-400 bg-gray-800 border-t border-gray-700 py-6 shadow-inner">
-            <p>&copy; {new Date().getFullYear()} {profile.name}</p>
+            <p>&copy; {new Date().getFullYear()} {profile.name}. All rights reserved.</p>
           </footer>
         </main>
       </body>
