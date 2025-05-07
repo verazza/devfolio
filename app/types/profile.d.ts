@@ -1,8 +1,15 @@
 declare module '../../data/profile.json' {
   interface Link {
     github?: string;
-    blog?: string;
     x?: string;
+    discord?: string;
+    qiita?: string;
+    kishax?: Kishax;
+  }
+
+  interface Kishax {
+    site?: string;
+    discord?: string;
   }
 
   interface OGP {
