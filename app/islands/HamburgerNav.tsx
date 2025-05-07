@@ -11,7 +11,11 @@ const HamburgerNav = () => {
   return (
     <nav class="bg-gray-800 py-4 relative">
       <div class="container mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between">
-        <div class="text-gray-100 font-bold text-xl">{profile.name}</div>
+        <div class="text-gray-100 font-bold text-xl">
+          <a href="/" class="text-gray-100 font-bold text-xl no-underline">
+            {profile.name}
+          </a>
+        </div>
         <div class="md:hidden">
           <button onClick={toggleMenu} class="focus:outline-none text-grey-100">
             <svg class="w-6 h-6 fill-current text-gray-700" viewBox="0 0 24 24">

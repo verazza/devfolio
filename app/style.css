@@ -26,3 +26,9 @@ a {
 a:hover {
   border-bottom-color: green;
 }
+
+.no-underline {
+  text-decoration: none !important;
+  border-bottom: none !important;
+  padding-bottom: 0 !important;
+}
