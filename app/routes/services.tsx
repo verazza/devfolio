@@ -34,8 +34,13 @@ export default createRoute(async (c) => {
             <h2 class="text-2xl font-semibold">📝 技術ブログ</h2>
             <p class="mt-2 text-gray-300">
               CLI中心の開発環境、セキュリティ、ツール活用に関する技術記事を不定期に発信中です。
+              <br />
+              Qiitaでも同じく発信しています。
             </p>
-            <a href="/blog" class="text-blue-500 underline mt-2 inline-block">ブログを読む</a>
+            <div class="mt-6 flex space-x-4 items-center"> {/* flex と items-center を追加 */}
+              <a href="/blog" class="text-blue-500 underline mt-2 inline-block">ブログを読む</a>
+              <a href={profile.link.qiita} class="text-blue-500 underline mt-2 inline-block">Qiitaでブログを読む</a>
+            </div>
           </article>
         </section>
       </div>
