@@ -1,7 +1,6 @@
 import { createRoute } from 'honox/factory';
 import profile from '../../data/profile.json';
 
-
 export default createRoute(async (c) => {
   return c.render(
     <>
