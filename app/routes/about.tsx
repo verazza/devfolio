@@ -13,7 +13,7 @@ export default createRoute(async (c) => {
         <section class="mt-8 space-y-4">
           <h2 class="text-2xl font-semibold">私について</h2>
           <p>
-            &emsp;verazzaです。ある種のソフトウェアエンジニアと言っていいのかわかりませんが、
+            &emsp;verazzaです。性別は男性で、現在は21歳で大学生をしています。ある種のソフトウェアエンジニアと言っていいのかわかりませんが、
             <br />
             私のポリシーは、
           </p>
