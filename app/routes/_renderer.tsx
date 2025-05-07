@@ -10,6 +10,16 @@ export default jsxRenderer(({ children }) => {
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>{profile.name} - {profile.title}</title>
+        <meta name="description" content={profile.og.description} />
+        <meta property="og:title" content={profile.og.title} />
+        <meta property="og:description" content={profile.og.description} />
+        <meta property="og:image" content={profile.og.image} />
+        <meta property="og:url" content={profile.og.url} />
+        <meta property="og:type" content="website" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content={profile.og.title} />
+        <meta name="twitter:description" content={profile.og.description} />
+        <meta name="twitter:image" content={profile.og.image} />
         <link rel="icon" href="/favicon.ico" />
         <Link href="/app/style.css" rel="stylesheet" />
         <Script src="/app/client.ts" async />
