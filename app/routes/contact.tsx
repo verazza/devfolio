@@ -45,7 +45,7 @@ export default createRoute(async (c) => {
           />
           <ContactMethod
             name="X (旧Twitter)"
-            href={profile.link.x}
+            href={profile.social.x.url}
             label="@verazza_"
           />
           <ContactMethod

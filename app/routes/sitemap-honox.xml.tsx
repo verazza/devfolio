@@ -41,7 +41,7 @@ export default createRoute(async (c) => {
       .map(
         (page) => `
     <url>
-      <loc>${profile.link.this}${page.loc}</loc>
+      <loc>${profile.url}${page.loc}</loc>
       <lastmod>${page.lastmod}</lastmod>
       <changefreq>${page.changefreq}</changefreq>
       <priority>${page.priority}</priority>

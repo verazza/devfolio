@@ -8,15 +8,21 @@
     "image": "",
     "url": ""
   },
-  "link": {
-    "github": "",
-    "x": "",
-    "qiita": ""
-    "kishax": {
-      "site": "",
-      "discord": ""
+  "url": "",
+  "social": {
+    "github": {
+      "url": ""
     },
-    "this": ""
+    "x": {
+      "url": ""
+    },
+    "qiita": {
+      "url": ""
+    },
+    "kishax": {
+      "url": "",
+      "discord": ""
+    }
   },
   "contact": {
     "email": ""

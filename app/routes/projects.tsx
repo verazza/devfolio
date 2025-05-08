@@ -136,7 +136,7 @@ export default createRoute(async (c) => {
             statement="CLIにこだわる私の開発思想を反映した設定集です。"
           />
           <p>
-            詳しくは、<a href={profile.link.github}>github-@verazza</a>&nbsp;をチェック。
+            詳しくは、<a href={profile.social.github.url}>github-@verazza</a>&nbsp;をチェック。
           </p>
         </section>
       </div>

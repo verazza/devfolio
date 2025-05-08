@@ -21,7 +21,7 @@ export default createRoute(async (c) => {
             <div class="mt-6 flex space-x-4 items-center text-blue-500 leading-none">
               <a href="/blog" rel="noopener noreferrer" target="_blank">ブログを読む</a>
               <span class="text-gray-400 not-italic">もしくは</span>
-              <a href={profile.link.qiita} rel="noopener noreferrer" target="_blank">Qiitaでブログを読む</a>
+              <a href={profile.social.qiita.url} rel="noopener noreferrer" target="_blank">Qiitaでブログを読む</a>
             </div>
           </article>
 
@@ -43,9 +43,9 @@ export default createRoute(async (c) => {
               <li>開発者・運営メンバー募集中</li>
             </ul>
             <p class="mt-2 text-gray-400">
-              編集中のポータルサイト：<a href={profile.link.kishax.site} class="text-blue-500 underline" rel="noopener noreferrer" target="_blank">kishax.net</a>
+              編集中のポータルサイト：<a href={profile.social.kishax.url} class="text-blue-500 underline" rel="noopener noreferrer" target="_blank">kishax.net</a>
               <br />
-              Discordサーバー：<a href={profile.link.kishax.discord} class="text-blue-500 underline" rel="noopener noreferrer" target="_blank">参加はこちら</a>
+              Discordサーバー：<a href={profile.social.kishax.discord} class="text-blue-500 underline" rel="noopener noreferrer" target="_blank">参加はこちら</a>
             </p>
           </article>
         </section>

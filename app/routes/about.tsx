@@ -60,7 +60,7 @@ export default createRoute(async (c) => {
             <br /><br />
 
             <h2 class="text-2xl font-semibold">最後に</h2>
-            &emsp;今では自分でブログなども書いて情報発信をしています。ぜひ興味のある方は、<a href="/blog">私のブログ</a>&nbsp;を見てみてください。<a href={profile.link.qiita}>Qiita-@verazza</a>&nbsp;でも同様に配信しています。
+            &emsp;今では自分でブログなども書いて情報発信をしています。ぜひ興味のある方は、<a href="/blog">私のブログ</a>&nbsp;を見てみてください。<a href={profile.social.qiita.url}>Qiita-@verazza</a>&nbsp;でも同様に配信しています。
             <br />
             また、上で話した、私が育てたエディターNeovimの設定やプロジェクトやプロジェクト要項は、<a href="/projects">PROJECTS</a>&nbsp;で確認できます。
           </p>
