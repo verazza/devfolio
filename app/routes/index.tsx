@@ -17,7 +17,7 @@ export default createRoute(async (c) => {
           <a href="/about" class="text-blue-400 underline hover:text-blue-300">About</a>
           <a href="/projects" class="text-blue-400 underline hover:text-blue-300">Projects</a>
           <a href="/services" class="text-blue-400 underline hover:text-blue-300">Services</a>
-          <a href="/services" class="text-blue-400 underline hover:text-blue-300">Contact</a>
+          <a href="/contact" class="text-blue-400 underline hover:text-blue-300">Contact</a>
         </div>
       </div>
     </>
