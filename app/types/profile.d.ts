@@ -4,6 +4,7 @@ declare module '../../data/profile.json' {
     x?: string;
     qiita?: string;
     kishax?: Kishax;
+    this?: string;
   }
 
   interface Kishax {
