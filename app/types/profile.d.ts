@@ -2,7 +2,6 @@ declare module '../../data/profile.json' {
   interface Link {
     github?: string;
     x?: string;
-    discord?: string;
     qiita?: string;
     kishax?: Kishax;
   }

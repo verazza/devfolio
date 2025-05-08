@@ -7,20 +7,24 @@ function ContactMethod({
   label,
 }: {
   name: string;
-  href: string;
+  href?: string;
   label: string;
 }) {
   return (
     <div>
       <p class="text-sm text-gray-500">{name}</p>
-      <a
-        href={href}
-        target="_blank"
-        rel="noopener noreferrer"
-        class="text-gray-300 hover:text-white transition duration-200"
-      >
-        {label}
-      </a>
+      {href ? (
+        <a
+          href={href}
+          target="_blank"
+          rel="noopener noreferrer"
+          class="text-gray-300 hover:text-white transition duration-200"
+        >
+          {label}
+        </a>
+      ) : (
+        <p class="text-gray-300">{label}</p>
+      )}
     </div>
   );
 }
@@ -37,7 +41,6 @@ export default createRoute(async (c) => {
         <section class="mt-8 space-y-4 text-center">
           <ContactMethod
             name="Discord"
-            href={profile.link.discord}
             label="@verazza"
           />
           <ContactMethod
