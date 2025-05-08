@@ -14,20 +14,21 @@ export default createRoute(async (c) => {
           <article>
             <h2 class="text-2xl font-semibold">📝 技術ブログ</h2>
             <p class="mt-2 text-gray-300">
-              CLI中心の開発環境、セキュリティ、ツール活用に関する技術記事を不定期に発信中です。
+              &emsp;CLI中心の開発環境、セキュリティ、ツール活用に関する技術記事を不定期に発信中です。
               <br />
               Qiitaでも同じく発信しています。
             </p>
-            <div class="mt-6 flex space-x-4 items-center"> {/* flex と items-center を追加 */}
-              <a href="/blog" class="text-blue-500 underline mt-2 inline-block">ブログを読む</a>
-              <a href={profile.link.qiita} class="text-blue-500 underline mt-2 inline-block">Qiitaでブログを読む</a>
+            <div class="mt-6 flex space-x-4 items-center text-blue-500 leading-none">
+              <a href="/blog">ブログを読む</a>
+              <span class="text-gray-400 not-italic">もしくは</span>
+              <a href={profile.link.qiita}>Qiitaでブログを読む</a>
             </div>
           </article>
 
           <article>
             <h2 class="text-2xl font-semibold">🎮 Kishax - Minecraft Server</h2>
             <p class="mt-2 text-gray-300">
-              Java版と統合版の両方に対応した、小規模で安全なコミュニティサーバーです。
+              &emsp;Java版と統合版の両方に対応した、小規模で安全なコミュニティサーバーです。
               <br />
               ガイドや説明文などが英語にも対応していて、日本以外の海外の人でも安心して入れます。
               <br />
