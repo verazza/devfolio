@@ -6,7 +6,7 @@ Repo: [blog](https://github.com/verazza/blog) to include from __05/07/2025__.
 
 ## Deploy
 - cloudflare/workers  
-see [https://verazza.work/](https://verazza.work/)
+see [https://verazza.dev/](https://verazza.dev/)
 
 ## Credits
 This project uses other external assets someone creates - see the [CREDITS](CREDITS)
