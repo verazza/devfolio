@@ -62,6 +62,18 @@ export default createRoute(async (c) => {
         </header>
         <section class="mt-8 space-y-10">
           <ProjectItem
+            title="mcp"
+            description="mcpサーバーをCloudflare-Workersにデプロイし、AIと連携する。あくまで自分用に分析などに役立てています。"
+            details="@"
+            points={[
+              "分析に役立つ",
+              "verazza-初めてのAI連携プロジェクト",
+              "誰でも自作関数をAIが利用するために作成できる"
+            ]}
+            statement="いずれ、Xで毎日コミット数報告してくれるサービスGithubitterのようなものを作れると思う。というか作りたいよね。乞うご期待。"
+          />
+
+          <ProjectItem
             title="hono-worker"
             description="現在閲覧中のウェブのソースコード。honoフレームワークにより高速にクライアントにリソースを提供します。"
             details="過去にExpress.jsで書いた経験をそのまま流用できて、コードを作るのにはそこまで苦はありませんでした。CloudflareのWorkersで配信もできるので、ある程度セキュリティも保証されます。"
