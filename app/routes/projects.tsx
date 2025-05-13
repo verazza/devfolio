@@ -64,7 +64,7 @@ export default createRoute(async (c) => {
           <ProjectItem
             title="mcp"
             description="mcpサーバーをCloudflare-Workersにデプロイし、AIと連携する。あくまで自分用に分析などに役立てています。"
-            details="@"
+            details={`@modelcontextprotocol/sdk を用いて MCP サーバーを実装し、Cloudflare Workers 上で稼働させることを試みました。Durable Objects を活用して状態を管理し、GitHub API と連携してユーザーのコントリビューション情報を取得・分析する機能の開発に取り組んでいます。Playground AI などのクライアントからのアクセスを可能にするための CORS 設定なども実装済みです。`}
             points={[
               "分析に役立つ",
               "verazza-初めてのAI連携プロジェクト",
