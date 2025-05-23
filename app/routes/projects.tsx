@@ -28,15 +28,27 @@ function ProjectItem({
 }) {
   const githubUrl =
     link || `https://github.com/${profile.name}/${title.replace(/\s+/g, '-')}`;
+  const projectId = title.toLowerCase().replace(/\s+/g, '-');
 
   return (
-    <article>
-      <h3 class="text-2xl font-semibold">{title}</h3>
+    <article id={projectId} class="mt-8 space-y-10 group relative pt-4">
+      <h3 class="text-2xl font-semibold flex items-center">
+        {/* アイコンを左側に移動し、サイズを小さく (text-xl)、右マージン (mr-2) を追加 */}
+        <a
+          href={`#${projectId}`}
+          class="mr-2 text-xl text-gray-500 hover:text-blue-400 opacity-0 group-hover:opacity-100 transition-opacity duration-200 no-underline" // no-underline を追加して下線を消す
+          aria-label={`Link to ${title} section`}
+        >
+          🔗 {/* リンク絵文字 */}
+        </a>
+        {/* タイトルを右側に配置 */}
+        <span>{title}</span>
+      </h3>
       <p class="mt-2 text-gray-300">{description}</p>
       <p class="mt-2 text-gray-400">{details}</p>
       <ul class="mt-2 list-disc list-inside text-gray-400">
-        {points.map((point) => (
-          <li>{point}</li>
+        {points.map((point, index) => (
+          <li key={`${projectId}-${index}`}>{point}</li>
         ))}
       </ul>
       <p class="mt-2 text-gray-400">{statement}</p>
@@ -44,6 +56,7 @@ function ProjectItem({
         class="text-blue-500 underline mt-2 inline-block"
         href={githubUrl}
         target="_blank"
+        rel="noopener noreferrer"
       >
         GitHubで見る
       </a>
@@ -64,7 +77,7 @@ export default createRoute(async (c) => {
           <ProjectItem
             title="bbs"
             description="私が過去に作った掲示板サイトを復活させる私にとっては一大プロジェクトです。"
-            details={`MySQLに加え、SQLiteでのデータベース管理、make devコマンドによる開発サーバーの構築を通し、掲示板を完成させる。過去にも実装したが、より一層セキュリティと保守性のあるコードで構築していく。写真はもちろん、動画などもアップロードできたし、Webhookを活用したDiscordへのポスト通知なども実装予定。ほとんど過去に実装しましたが、それらを完全に取り込む予定です。`}
+            details={`MySQLに加え、SQLiteでのデータベース管理、make devコマンドによる開発サーバーの構築を通し、掲示板を完成させる。過去にも実装したが、より一層セキュリティと保守性のあるコードで構築していく。写真はもちろん、動画などもアップロードできたし、Webhookを活用したDiscordへのポスト通知なども実装予定。ほとんど過去に実装したがゆえに、それらを慎重に取り込んでゆく。`}
             points={[
               "verazza-掲示板の復興チャレンジ",
               "今までに培ってきたプログラミング技術の集大成",
