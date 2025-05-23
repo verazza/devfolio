@@ -62,6 +62,18 @@ export default createRoute(async (c) => {
         </header>
         <section class="mt-8 space-y-10">
           <ProjectItem
+            title="bbs"
+            description="私が過去に作った掲示板サイトを復活させる私にとっては一大プロジェクトです。"
+            details={`MySQLに加え、SQLiteでのデータベース管理、make devコマンドによる開発サーバーの構築を通し、掲示板を完成させる。過去にも実装したが、より一層セキュリティと保守性のあるコードで構築していく。写真はもちろん、動画などもアップロードできたし、Webhookを活用したDiscordへのポスト通知なども実装予定。ほとんど過去に実装しましたが、それらを完全に取り込む予定です。`}
+            points={[
+              "verazza-掲示板の復興チャレンジ",
+              "今までに培ってきたプログラミング技術の集大成",
+              "PHPを好きになるためのプロジェクト"
+            ]}
+            statement="PHPを最初に学んでから、はや3年以上経つが、もちろん他の言語に浮気したので、その間のブランクもあって、PHPかけなくなっていると思いきや、クラス分けや再利用可能なコンポーネントに分割することや、ミドルウェア設計など、他言語で学んだことをフルに活かせるようになってて、成長を感じてる！私は完成させる。もう二度と、バックドア攻撃なんて仕掛けられてたまるか！"
+          />
+
+          <ProjectItem
             title="mcp"
             description="mcpサーバーをCloudflare-Workersにデプロイし、AIと連携する。あくまで自分用に分析などに役立てています。"
             details={`@modelcontextprotocol/sdk を用いて MCP サーバーを実装し、Cloudflare Workers 上で稼働させることを試みました。Durable Objects を活用して状態を管理し、GitHub API と連携してユーザーのコントリビューション情報を取得・分析する機能の開発に取り組んでいます。Playground AI などのクライアントからのアクセスを可能にするための CORS 設定なども実装済みです。`}
