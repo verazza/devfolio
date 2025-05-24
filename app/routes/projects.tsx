@@ -106,7 +106,8 @@ function ProjectItem({
       <h3 class="text-2xl font-semibold flex items-center">
         <a
           href={`#${projectId}`}
-          class="mr-2 text-xl text-gray-500 hover:text-blue-400 opacity-0 group-hover:opacity-100 transition-opacity duration-200 no-underline"
+          // ★ opacity-0 と group-hover:opacity-100 を削除
+          class="mr-2 text-xl text-gray-500 hover:text-blue-400 transition-opacity duration-200 no-underline"
           aria-label={`Link to ${title} section`}
         >
           🔗
