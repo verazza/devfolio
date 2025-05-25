@@ -4,11 +4,11 @@
   "description": "using hono framework, deploying at cloudflare workers",
   "homepage": "https://verazza.work",
   "bugs": {
-    "url": "https://github.com/verazza/hono-web/issues"
+    "url": "https://github.com/verazza/hono-worker/issues"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/verazza/hono-web.git"
+    "url": "git+https://github.com/verazza/hono-worker.git"
   },
   "license": "MIT",
   "author": "verazza",
