@@ -6,31 +6,37 @@ const pages = [
     loc: '/',
     lastmod: new Date().toISOString(),
     priority: '1.0',
-    changefreq: 'daily',
+    changefreq: 'weekly',
   },
   {
     loc: '/about',
     lastmod: new Date().toISOString(),
     priority: '0.7',
-    changefreq: 'daily',
+    changefreq: 'weekly',
   },
   {
     loc: '/projects',
     lastmod: new Date().toISOString(),
     priority: '0.7',
-    changefreq: 'daily',
+    changefreq: 'weekly',
   },
   {
     loc: '/services',
     lastmod: new Date().toISOString(),
     priority: '0.7',
-    changefreq: 'daily',
+    changefreq: 'weekly',
+  },
+  {
+    loc: '/contact',
+    lastmod: new Date().toISOString(),
+    priority: '0.7',
+    changefreq: 'weekly',
   },
   {
     loc: '/blog',
     lastmod: new Date().toISOString(),
     priority: '0.9',
-    changefreq: 'daily',
+    changefreq: 'weekly',
   },
 ];
 
