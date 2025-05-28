@@ -12,7 +12,7 @@ type ProjectListProps = {
 
 const ProjectList = ({ projects, profile }: ProjectListProps) => {
   const { lang } = usePageLang();
-  console.log('[ProjectList Island] Rendered. Current lang:', lang);
+  // console.log('[ProjectList Island] Rendered. Current lang:', lang);
 
   // profile.social.github.id が存在するか確認
   const githubId = profile?.social?.github?.id;
