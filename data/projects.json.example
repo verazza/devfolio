@@ -1,0 +1,64 @@
+{
+  "projects": [
+    {
+      "id": "space-adventure",
+      "title": {
+        "ja": "Space Adventure",
+        "en": "Space Adventure"
+      },
+      "description": {
+        "ja": "プレイヤーが宇宙船を操り、未知の惑星を探索するゲーム。",
+        "en": "A game where players pilot a spaceship and explore unknown planets."
+      },
+      "details": {
+        "ja": "ゲームエンジンとしてUnityを採用し、物理演算を活かしたリアルな宇宙飛行を実現。拡張性の高いモジュール設計を採用。",
+        "en": "Uses Unity as the game engine, leveraging physics-based space travel with a highly modular design."
+      },
+      "points": [
+        {
+          "ja": "Unity + C#",
+          "en": "Unity + C#"
+        },
+        {
+          "ja": "プロシージャル生成による惑星探索",
+          "en": "Procedural generation for planet exploration"
+        }
+      ],
+      "statement": {
+        "ja": "自分の宇宙船でどこまでも飛んでいける、そんな自由を感じられるゲーム。",
+        "en": "A game where you can fly anywhere with your own spaceship and feel the freedom of space."
+      },
+      "githubRepoName": "space-adventure"
+    },
+    {
+      "id": "task-magic",
+      "title": {
+        "ja": "Task Magic",
+        "en": "Task Magic"
+      },
+      "description": {
+        "ja": "タスク管理を魔法のように簡単にする生産性向上アプリ。",
+        "en": "A productivity app that makes task management magically easy."
+      },
+      "details": {
+        "ja": "ReactとNode.jsで開発されたWebアプリ。ドラッグ＆ドロップでタスクの整理が可能。",
+        "en": "A web app built with React and Node.js, allowing intuitive drag-and-drop task organization."
+      },
+      "points": [
+        {
+          "ja": "React + Node.js",
+          "en": "React + Node.js"
+        },
+        {
+          "ja": "レスポンシブデザインとオフライン対応",
+          "en": "Responsive design with offline support"
+        }
+      ],
+      "statement": {
+        "ja": "タスクの管理をもっと楽しく、もっとスマートに。",
+        "en": "Making task management more fun and smarter."
+      },
+      "githubRepoName": "task-magic"
+    }
+  ]
+}

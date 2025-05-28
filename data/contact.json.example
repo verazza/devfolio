@@ -1,0 +1,14 @@
+{
+  "way": {
+    "discord": {
+      "id": "spacepilot42"
+    },
+    "x": {
+      "id": "orbit_explorer",
+      "url": "https://x.com/orbit_explorer"
+    },
+    "direct": {
+      "email": "contact@galaxyhub.dev"
+    }
+  }
+}

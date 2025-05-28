@@ -1,0 +1,46 @@
+{
+  "aboutMe": {
+    "title": {
+      "ja": "私について",
+      "en": "About Me"
+    },
+    "intro1": {
+      "ja": "私はSkyler。ソフトウェアとゲーム開発に情熱を注いでいます。",
+      "en": "I'm Skyler. Passionate about software and game development."
+    },
+    "policySuffix": {
+      "ja": "です。",
+      "en": "."
+    },
+    "neovimStory": {
+      "ja": "エディター選びは試行錯誤の連続。最終的にNeovimがしっくりきました。",
+      "en": "Choosing an editor was a journey of trial and error. Eventually, Neovim felt right."
+    }
+  },
+  "career": {
+    "title": {
+      "ja": "経歴",
+      "en": "Background"
+    },
+    "paragraphs": [
+      {
+        "ja": "高校時代にPythonを触り始め、プログラミングの世界にのめり込む。",
+        "en": "Started experimenting with Python in high school and fell in love with programming."
+      },
+      {
+        "ja": "その後、ゲーム開発に興味を持ち、UnityとC#を学ぶ。",
+        "en": "Later got interested in game development and learned Unity and C#."
+      },
+      {
+        "ja": "現在は、ウェブ開発にも足を踏み入れ、ReactとNode.jsを使ってプロジェクトを構築中。",
+        "en": "Currently exploring web development, building projects with React and Node.js."
+      }
+    ]
+  },
+  "finally": {
+    "title": {
+      "ja": "最後に",
+      "en": "Finally"
+    }
+  }
+}

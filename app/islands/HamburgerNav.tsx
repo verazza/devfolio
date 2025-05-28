@@ -1,11 +1,33 @@
-import { useState } from 'hono/jsx';
-import profile from '../../data/profile.json'
+import { useEffect, useState } from 'hono/jsx';
+import { Language } from '../types/common';
 
-const HamburgerNav = () => {
+type ProfileDataForNav = { name: string; };
+type HamburgerNavProps = {
+  profile: ProfileDataForNav;
+  lang: Language;
+  setLang: (newLang: Language) => void; // ★ setLang prop を受け取る
+};
+
+const HamburgerNav = ({ profile, lang, setLang }: HamburgerNavProps) => {
+  // ハンバーガーメニューの開閉状態もこのコンポーネントで持つことにする
   const [isOpen, setIsOpen] = useState(false);
 
+  useEffect(() => {
+    // console.log(`[HamburgerNavComponent Effect - Step A] Props/State updated. lang: ${lang}, isOpen: ${isOpen}`);
+  }, [lang, isOpen, profile]); // profileも依存配列に含める
+
+  // console.log(`[HamburgerNavComponent Render - Step A] Rendering. lang: ${lang}, isOpen: ${isOpen}, profile: ${profile.name}`);
+
   const toggleMenu = () => {
+    // console.log('[HamburgerNavComponent - Step A] toggleMenu called.');
     setIsOpen(!isOpen);
+  };
+
+  const handleLangChangeInternal = (newLang: Language) => {
+    // console.log(`[HamburgerNavComponent - Step A] handleLangChangeInternal called with ${newLang}.`);
+    // alert(`[HamburgerNavComponent - Step A] Language button ${newLang} clicked. Calling props.setLang now.`); // デバッグ用
+    setLang(newLang); // propsで受け取った (この段階ではダミーの) 関数を呼び出す
+    setIsOpen(false); // 言語選択後にメニューを閉じる
   };
 
   return (
@@ -16,9 +38,10 @@ const HamburgerNav = () => {
             {profile.name}
           </a>
         </div>
+
         <div class="md:hidden">
-          <button onClick={toggleMenu} class="focus:outline-none text-grey-100">
-            <svg class="w-6 h-6 fill-current text-gray-700" viewBox="0 0 24 24">
+          <button onClick={toggleMenu} aria-label="Toggle menu" class="focus:outline-none text-gray-100 hover:text-blue-400">
+            <svg class="w-6 h-6 fill-current" viewBox="0 0 24 24">
               {isOpen ? (
                 <path fillRule="evenodd" clipRule="evenodd" d="M18.278 16.864a1 1 0 0 1-1.414 1.414l-4.829-4.828-4.828 4.828a1 1 0 0 1-1.414-1.414l4.828-4.829-4.828-4.828a1 1 0 0 1 1.414-1.414l4.829 4.828 4.828-4.828a1 1 0 0 1 1.414 1.414l-4.828 4.829z" />
               ) : (
@@ -27,21 +50,32 @@ const HamburgerNav = () => {
             </svg>
           </button>
         </div>
-        <div class={`hidden md:flex space-x-8`}>
+
+        <div class={`hidden md:flex items-center space-x-8`}>
           <a href="/" class="text-gray-300 hover:text-blue-500">HOME</a>
           <a href="/about" class="text-gray-300 hover:text-blue-500">ABOUT</a>
           <a href="/projects" class="text-gray-300 hover:text-blue-500">PROJECTS</a>
           <a href="/services" class="text-gray-300 hover:text-blue-500">SERVICES</a>
           <a href="/contact" class="text-gray-300 hover:text-blue-500">CONTACT</a>
+          <div class="flex space-x-2">
+            <button onClick={() => handleLangChangeInternal('ja')} class={`px-2 py-1 rounded ${lang === 'ja' ? 'bg-blue-500 text-white' : 'text-gray-300 hover:text-white'}`}>JA</button>
+            <button onClick={() => handleLangChangeInternal('en')} class={`px-2 py-1 rounded ${lang === 'en' ? 'bg-blue-500 text-white' : 'text-gray-300 hover:text-white'}`}>EN</button>
+          </div>
         </div>
+
         {isOpen && (
           <div class="md:hidden absolute top-full left-0 w-full bg-gray-800 shadow-md z-10">
             <div class="px-4 py-2 flex flex-col items-center space-y-2">
-              <a href="/" class="text-gray-300 hover:text-blue-500">HOME</a>
-              <a href="/about" class="text-gray-300 hover:text-blue-500">ABOUT</a>
-              <a href="/projects" class="text-gray-300 hover:text-blue-500">PROJECTS</a>
-              <a href="/services" class="text-gray-300 hover:text-blue-500">SERVICES</a>
-              <a href="/contact" class="text-gray-300 hover:text-blue-500">CONTACT</a>
+              <a href="/" class="text-gray-300 hover:text-blue-500 py-2" onClick={() => { setIsOpen(false); /* toggleMenu(); でも良い */ }}>HOME</a>
+              <a href="/about" class="text-gray-300 hover:text-blue-500 py-2" onClick={() => setIsOpen(false)}>ABOUT</a>
+              <a href="/projects" class="text-gray-300 hover:text-blue-500 py-2" onClick={() => setIsOpen(false)}>PROJECTS</a>
+
+              <a href="/services" class="text-gray-300 hover:text-blue-500 py-2" onClick={() => setIsOpen(false)}>SERVICES</a>
+              <a href="/contact" class="text-gray-300 hover:text-blue-500 py-2" onClick={() => setIsOpen(false)}>CONTACT</a>
+              <div class="flex space-x-2 pt-4">
+                <button onClick={() => handleLangChangeInternal('ja')} class={`px-3 py-1 rounded ${lang === 'ja' ? 'bg-blue-500 text-white' : 'text-gray-300 hover:text-white'}`}>JA</button>
+                <button onClick={() => handleLangChangeInternal('en')} class={`px-3 py-1 rounded ${lang === 'en' ? 'bg-blue-500 text-white' : 'text-gray-300 hover:text-white'}`}>EN</button>
+              </div>
             </div>
           </div>
         )}
@@ -49,5 +83,4 @@ const HamburgerNav = () => {
     </nav>
   );
 };
-
 export default HamburgerNav;
