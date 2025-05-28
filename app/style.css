@@ -26,12 +26,6 @@ nav {
   font-weight: 600 !important;
 }
 
-.mobile-menu-dropdown {
-  max-height: calc(100vh - 70px); /* Navbarの高さ分を引く (仮に70pxとする) */
-  overflow-y: auto;
-  -webkit-overflow-scrolling: touch; /* iOSでの慣性スクロール */
-}
-
 .container {
   max-width: 960px;
   margin-left: auto;
