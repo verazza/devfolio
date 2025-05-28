@@ -1,6 +1,6 @@
 {
   "$schema": "node_modules/wrangler/config-schema.json",
-  "name": "hono-worker",
+  "name": "devfolio",
   "main": "./dist/index.js",
   "compatibility_date": "2025-05-01",
   "compatibility_flags": [
@@ -10,7 +10,7 @@
     "directory": "./dist"
   },
   "vars": {
-    "APP_NAME": "hono-worker"
+    "APP_NAME": "devfolio"
   },
   "kv_namespaces": [
     {
@@ -21,7 +21,7 @@
   "d1_databases": [
     {
       "binding": "DB",
-      "database_name": "hono-worker",
+      "database_name": "devfolio",
       "database_id": "YOUR_D1_DATABASE_ID"
     }
   ]

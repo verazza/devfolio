@@ -7,7 +7,7 @@ export interface ProjectInfo {
   details: LocalizedString;     // JSXではなくLocalizedStringに変更
   points: LocalizedString[];    // 各ポイントもLocalizedStringに
   statement: LocalizedString;
-  githubRepoName?: string; // GitHubリポジトリ名 (例: "bbs", "hono-worker")
+  githubRepoName?: string; // GitHubリポジトリ名 (例: "bbs", "devfolio")
   liveLink?: string;       // 公開されている場合のURL (オプション)
   // kishax のような特殊な詳細リンクが必要な場合、フラグや追加データをここに持たせることも可能
   detailsLinkRepo?: string; // 例: "kishax-web" をここに入れる

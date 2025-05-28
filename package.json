@@ -1,14 +1,14 @@
 {
-  "name": "hono-worker",
+  "name": "devfolio",
   "version": "1.0.0",
   "description": "using hono framework, deploying at cloudflare workers",
   "homepage": "https://verazza.work",
   "bugs": {
-    "url": "https://github.com/verazza/hono-worker/issues"
+    "url": "https://github.com/verazza/devfolio/issues"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/verazza/hono-worker.git"
+    "url": "git+https://github.com/verazza/devfolio.git"
   },
   "license": "MIT",
   "author": "verazza",

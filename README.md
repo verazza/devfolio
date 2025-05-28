@@ -1,8 +1,8 @@
-# hono-worker
+# devfolio
 
 ## Note
-I wanna create static site in cloudflare worker, therefore I adopted [hono](https://hono.dev/) framework, more specifically using [honox](https://github.com/honojs/honox) of `xbasic` model. ~~At last, I am going to rewrite [kishax-web](https://github.com/verazza/kishax-web) with hono.~~ Abandoned cuz kishax-web's express.js implementation is too huge.  
-Repo: [blog](https://github.com/verazza/blog) to include from __05/07/2025__.
+I wanna create static site in cloudflare worker, therefore I adopted [hono](https://hono.dev/) framework, more specifically using [honox](https://github.com/honojs/honox) of `xbasic` model.  
+Repo: [blog](https://github.com/verazza/blog) is included into this from __05/07/2025__.
 
 ## Deploy
 - cloudflare/workers  
