@@ -1,4 +1,3 @@
-// app/islands/IndexContent.tsx
 import { usePageLang } from '../hooks/pageLang';
 import { translate } from '../utils/i18n';
 import { generalMessages } from '../locales/translations';
@@ -8,7 +7,7 @@ const IndexContent = () => {
   // console.log('[IndexContent Island] Rendered. Current lang:', lang);
 
   return (
-    <div class="text-center"> {/* 親要素がtext-centerなので、リンクのブロックも中央寄せになります */}
+    <div class="text-center">
       <p class="text-xl text-gray-400 mt-2 underline font-bold">
         {translate(generalMessages.homeDescription2, lang)}
       </p>
@@ -17,24 +16,34 @@ const IndexContent = () => {
       </p>
 
       {/* リンクコンテナ */}
-      {/* モバイル (デフォルト): 2列グリッド、アイテム間のギャップは4 */}
-      {/* mdブレークポイント以上 (デスクトップ): flexレイアウトで横一列、アイテム間のスペースは6 */}
       <div
-        class="mt-8 grid grid-cols-2 gap-4 
-               md:flex md:flex-row md:flex-nowrap md:justify-center md:space-x-6"
+        class="mt-8 flex flex-wrap justify-center items-center 
+               gap-x-6 gap-y-3 {/* アイテム間の横方向と縦方向の隙間 */}
+               md:flex-nowrap {/* md以上では折り返さない */}
+               md:space-x-6   {/* md以上ではアイテム間の横スペースをspace-xで制御 (gap-yは影響しなくなる) */}
+              "
       >
-        <a href="/about" class="text-blue-400 underline hover:text-blue-300 py-1 px-2"> {/* 適度なパディングを追加 */}
+        {/* 各リンクアイテムに幅を指定して、モバイルで2列になるように調整します。
+          例: basis-[45%] は、親要素の幅の45%を基本幅とします。
+          md:basis-auto で、デスクトップでは幅を自動に戻します。
+        */}
+        <a href="/about" class="text-blue-400 underline hover:text-blue-300 py-1 px-2 basis-[45%] md:basis-auto text-center">
           {translate(generalMessages.aboutTitle, lang)}
         </a>
-        <a href="/projects" class="text-blue-400 underline hover:text-blue-300 py-1 px-2">
+        <a href="/projects" class="text-blue-400 underline hover:text-blue-300 py-1 px-2 basis-[45%] md:basis-auto text-center">
           {translate(generalMessages.projectsTitle, lang)}
         </a>
-        <a href="/services" class="text-blue-400 underline hover:text-blue-300 py-1 px-2">
+        <a href="/services" class="text-blue-400 underline hover:text-blue-300 py-1 px-2 basis-[45%] md:basis-auto text-center">
           {translate(generalMessages.servicesTitle, lang)}
         </a>
-        <a href="/contact" class="text-blue-400 underline hover:text-blue-300 py-1 px-2">
+        <a href="/contact" class="text-blue-400 underline hover:text-blue-300 py-1 px-2 basis-[45%] md:basis-auto text-center">
           {translate(generalMessages.contactTitle, lang)}
         </a>
+        {/* もしリンクが4つになった場合でも、モバイルでは2x2、デスクトップでは1x4になります */}
+        {/* <a href="/projects" class="text-blue-400 underline hover:text-blue-300 py-1 px-2 basis-[45%] md:basis-auto text-center">
+          {translate(generalMessages.projectsTitle, lang)}
+        </a> 
+        */}
       </div>
     </div>
   );
