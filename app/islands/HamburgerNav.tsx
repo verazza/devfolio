@@ -1,4 +1,3 @@
-// app/islands/HamburgerNav.tsx
 import { useState, useEffect, useCallback } from 'hono/jsx';
 import { Language } from '../types/common';
 
