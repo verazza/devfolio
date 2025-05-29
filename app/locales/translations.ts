@@ -81,6 +81,10 @@ export const generalMessages: Record<string, LocalizedString> = {
     "ja": "最後に",
     "en": "Finally"
   },
+  nextButtonText: { ja: "次に進む", en: "Next", },
+  nextPagePrefix: { ja: "次は:", en: "Next:" },
+  prevButtonText: { ja: "前に戻る", en: "Previous" },
+  prevPagePrefix: { ja: "前は:", en: "Previous:" },
 };
 
 export const servicesPageStrings = {

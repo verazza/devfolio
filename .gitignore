@@ -3,6 +3,7 @@
 /data/about.json
 /data/contact.json
 /data/projects.json
+/data/siteConfig.json
 wrangler.jsonc
 .wrangler/
 package-lock.json

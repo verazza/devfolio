@@ -2,6 +2,7 @@ import { jsxRenderer } from 'hono/jsx-renderer';
 import type { Context } from 'hono';
 import RootLayoutIsland from '../islands/RootLayoutIsland';
 import profileData from '../../data/profile.json';
+import siteConfig from '../../data/siteConfig.json';
 import { Link, Script } from 'honox/server';
 
 export default jsxRenderer(({ children }, c: Context) => {
@@ -38,7 +39,12 @@ export default jsxRenderer(({ children }, c: Context) => {
       </head>
       <body class="font-sans antialiased text-gray-100 bg-gray-900">
         <main class="rounded-md shadow-lg mx-auto max-w-4xl p-4 bg-gray-800">
-          <RootLayoutIsland profile={profileData} initialLang={ssrInitialLang}>
+          <RootLayoutIsland
+            profile={profileData}
+            initialLang={ssrInitialLang}
+            currentPath={c.req.path}
+            siteConfig={siteConfig}
+          >
             {children}
           </RootLayoutIsland>
         </main>

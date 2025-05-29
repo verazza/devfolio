@@ -1,17 +1,21 @@
 import { useState, useEffect, PropsWithChildren } from 'hono/jsx';
 import HamburgerNav from './HamburgerNav';
 import { Language } from '../types/common';
+import type { SiteConfig } from '../types/siteConfig';
 import { PageLangContextProvider } from '../hooks/pageLang';
 import type { ProfileData } from '../types/profile';
+import PrevNextNavigation from './PrevNextNavigation';
 
 type RootLayoutIslandProps = PropsWithChildren<{
   profile: ProfileData;
   initialLang?: Language;
+  currentPath: string;
+  siteConfig: SiteConfig;
 }>;
 
 const LS_LANG_KEY = 'verazza_dev_lang'; // localStorageのキー
 
-export default function RootLayoutIsland({ children, profile, initialLang = 'ja' }: RootLayoutIslandProps) {
+export default function RootLayoutIsland({ children, profile, initialLang = 'ja', currentPath, siteConfig }: RootLayoutIslandProps) {
   const [lang, setLangOriginal] = useState<Language>(() => {
     if (typeof localStorage !== 'undefined') {
       const storedLang = localStorage.getItem(LS_LANG_KEY);
@@ -37,6 +41,9 @@ export default function RootLayoutIsland({ children, profile, initialLang = 'ja'
 
   // console.log('[RootLayoutIsland Render] Rendering with lang:', lang);
 
+
+  const shouldShowPrevNext = siteConfig.showPrevNextOnHomePage ? true : currentPath !== '/';
+
   return (
     <>
       <HamburgerNav
@@ -46,9 +53,18 @@ export default function RootLayoutIsland({ children, profile, initialLang = 'ja'
       />
       <PageLangContextProvider value={{ lang }}>
         <div>{children}</div>
+        {/* ★ JSON設定と現在のパスに基づいて表示を制御 */}
+        {shouldShowPrevNext && <PrevNextNavigation currentPath={currentPath} />}
       </PageLangContextProvider>
       <footer class="mt-12 text-center text-gray-400 bg-gray-800 border-t border-gray-700 py-6 shadow-inner">
-        <p>&copy; {new Date().getFullYear()} {profile.copyrighter || profile.name}. All rights reserved.</p>
+        <p>
+          &copy; {new Date().getFullYear()} {profile.copyrighter || profile.name}.
+          {/* ★ スマートフォン表示 (smブレークポイント未満) でのみ改行 */}
+          <br class="sm:hidden" />
+          {/* デスクトップ表示時にスペースが入るように */}
+          {' '}
+          All rights reserved.
+        </p>
       </footer>
     </>
   );
