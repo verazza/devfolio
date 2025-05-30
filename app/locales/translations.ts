@@ -14,8 +14,8 @@ export const generalMessages: Record<string, LocalizedString> = {
     "en": "Home",
   },
   "homeDescription": {
-    "ja": "verazzaって？",
-    "en": "Who is verazza?",
+    "ja": "「前川 鷹哉」って？",
+    "en": "Who is 'Takaya Maekawa'?",
   },
   "homeDescription2": {
     "ja": "VSCodeは使わずCLIライク",
@@ -66,12 +66,12 @@ export const generalMessages: Record<string, LocalizedString> = {
     "en": "Table of Contents",
   },
   "AboutMeLabel": {
-    "ja": "verazzaとは",
-    "en": "Who is verazza?",
+    "ja": "「前川 鷹哉」とは",
+    "en": "Who is 'Takaya Maekawa'?",
   },
   "AboutPolicyLable": {
     "ja": "プログラミングにおけるポリシー",
-    "en": "verazza's policy on programming",
+    "en": "my policy on programming",
   },
   "AboutBackgrounds": {
     "ja": "プログラミングを始めてから今に至るまで",

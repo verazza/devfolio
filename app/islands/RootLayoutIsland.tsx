@@ -13,7 +13,7 @@ type RootLayoutIslandProps = PropsWithChildren<{
   siteConfig: SiteConfig;
 }>;
 
-const LS_LANG_KEY = 'verazza_dev_lang'; // localStorageのキー
+const LS_LANG_KEY = 'maekawa_dev_lang'; // localStorageのキー
 
 export default function RootLayoutIsland({ children, profile, initialLang = 'ja', currentPath, siteConfig }: RootLayoutIslandProps) {
   const [lang, setLangOriginal] = useState<Language>(() => {

@@ -2,16 +2,16 @@
   "name": "devfolio",
   "version": "1.0.0",
   "description": "using hono framework, deploying at cloudflare workers",
-  "homepage": "https://verazza.work",
+  "homepage": "https://maekawa.dev/blog",
   "bugs": {
-    "url": "https://github.com/verazza/devfolio/issues"
+    "url": "https://github.com/takayamaekawa/devfolio/issues"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/verazza/devfolio.git"
+    "url": "git+https://github.com/takayamaekawa/devfolio.git"
   },
   "license": "MIT",
-  "author": "verazza",
+  "author": "Takaya Maekawa",
   "type": "module",
   "scripts": {
     "dev": "vite",
