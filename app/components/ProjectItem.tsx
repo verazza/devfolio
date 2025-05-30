@@ -1,9 +1,8 @@
-import { Fragment } from 'hono/jsx'; // Fragmentをインポート
 import type { ProjectInfo } from '../types/projects';
-import type { Language, LocalizedString } from '../types/common';
+import type { Language } from '../types/common';
 import { translate } from '../utils/i18n';
-import { parseAndStyleInlineCode } from '../utils/textFormatters';
 import { projectPageStrings } from '../locales/translations'; // projectPageStringsも必要なら
+import { FormattedTextRenderer } from '../utils/textFormatters';
 
 const GetGitUrlComponent = ({ githubId, repo }: { githubId: string, repo: string }) => {
   const gitUrl = `https://github.com/${githubId}/${repo}`;
@@ -13,16 +12,6 @@ const GetGitUrlComponent = ({ githubId, repo }: { githubId: string, repo: string
 type ProjectItemProps = ProjectInfo & {
   lang: Language;
   githubId: string;
-};
-
-const FormattedTextRenderer = ({ text, lang }: { text: LocalizedString | undefined, lang: Language }) => {
-  if (!text) return null;
-  const translated = translate(text, lang);
-  if (!translated || translated.trim() === "") return null;
-
-  const parts = parseAndStyleInlineCode(translated);
-  // ★ key を文字列に変換 (例: i.toString() または String(i))
-  return <>{parts.map((part, i) => <Fragment key={String(i)}>{part}</Fragment>)}</>;
 };
 
 function ProjectItem({

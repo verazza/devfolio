@@ -1,3 +1,23 @@
+import { Fragment } from 'hono/jsx'; // Fragmentをインポート
+import type { Language, LocalizedString } from '../types/common';
+import { translate } from '../utils/i18n';
+
+/**
+ * 文字列内のバッククォートで囲まれた部分を <code> HTML タグに置き換えます。
+ * @param text 加工する文字列
+ * @returns HTML文字列。バッククォート部分はスタイル付きの<code>タグに変換される。
+ */
+export function styleInlineCodeToHtml(text: string | undefined | null): string {
+  if (!text) return ''; // textがundefinedやnullの場合は空文字列を返す
+
+  // バッククォートで囲まれた部分を <code> タグでラップして置換
+  // スタイルはTailwind CSSのクラスで直接指定
+  return text.replace(
+    /`([^`]+?)`/g, // 非貪欲マッチでバッククォート間をキャプチャ
+    '<code class="bg-slate-700 text-emerald-400 px-1.5 py-0.5 rounded-md text-sm font-mono mx-0.5">$1</code>'
+  );
+}
+
 /**
  * 文字列内のバッククォートで囲まれた部分を <code> タグに置き換えます。
  * @param text 加工する文字列
@@ -40,3 +60,13 @@ export function parseAndStyleInlineCode(text: string | undefined | null): (strin
 
   return parts;
 }
+
+export const FormattedTextRenderer = ({ text, lang }: { text: LocalizedString | undefined, lang: Language }) => {
+  if (!text) return null;
+  const translated = translate(text, lang);
+  if (!translated || translated.trim() === "") return null;
+
+  const parts = parseAndStyleInlineCode(translated);
+  // ★ key を文字列に変換 (例: i.toString() または String(i))
+  return <>{parts.map((part, i) => <Fragment key={String(i)}>{part}</Fragment>)}</>;
+};
