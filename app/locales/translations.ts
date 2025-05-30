@@ -127,12 +127,15 @@ export const projectPageStrings = { // 新しいオブジェクトとして定�
 
 export const aboutPageStrings = {
   myBlogLinkText: { ja: "私のブログ", en: "my blog" },
-  qiitaUserPrefix: { ja: "Qiita-@", en: "Qiita-@" }, // ユーザー名は profile.json から
+  qiitaUserPrefix: { ja: "Qiita-@", en: "Qiita-@" },
   projectsLinkText: { ja: "PROJECTS", en: "PROJECTS" },
 
-  finalParagraphPart1: { ja: "今では自分でブログなども書いて情報発信をしています。ぜひ興味のある方は、", en: "I now also write and publish information through my blog and other means. If you are interested, please take a look at " },
-  finalParagraphPart2: { ja: " を見てみてください。", en: ". " }, // &nbsp; は JSX 側で調整
-  finalParagraphPart3: { ja: " でも同様に配信しています。", en: " where I also publish similar content." }, // &nbsp; は JSX 側で調整
-  finalParagraphPart4: { ja: "また、上で話した、私が育てたエディターNeovimの設定やプロジェクトやプロジェクト要項は、", en: "Also, the Neovim editor settings I've cultivated, projects, and project outlines I mentioned earlier can be found at " },
-  finalParagraphPart5: { ja: " で確認できます。", en: "." } // &nbsp; は JSX 側で調整
+  // 「最後に」セクションのテキストセグメント
+  finallyP1_seg1: { ja: "今では自分でブログなども書いて情報発信をしています。ぜひ興味のある方は、", en: "I now also write and publish information through my blog and other means. If you are interested, please take a look at " },
+  finallyP1_seg2: { ja: " を見てみてください。", en: ". " },
+  finallyP1_seg3: { ja: " でも同様に配信しています。", en: " where I also publish similar content." },
+
+  finallyP2_seg1: { ja: "また、上で話した、私が育てたエディターNeovimの設定やプロジェクトやプロジェクト要項は、", en: "Also, the Neovim editor settings I've cultivated, projects, and project outlines I mentioned earlier can be found at " },
+  finallyP2_seg2: { ja: " で確認できます。", en: "." },
+  finallyP3_seg1: { ja: "私は将来、起業し、独立するつもりです。しかし、経験が乏しいため、他の人のバックアップが必要になります。そのためにも、今後は、創作性と行動力を持って、邁進するつもりです。", en: "I intend to start my own business and become independent in the future. However, due to my lack of experience, I will need the backup of others. For this reason, I intend to push forward with creativity and energy." },
 };

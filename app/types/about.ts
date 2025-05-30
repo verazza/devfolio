@@ -1,32 +1,50 @@
-import type { LocalizedString } from './common'; // LocalizedStringを再利用 (パスを確認)
+// app/types/about.ts
+import type { LocalizedString } from './common'; // ★ common.ts に LocalizedString があると仮定
+import type { aboutPageStrings } from '../locales/translations';
 
-export interface AboutSectionContent {
+// 古い定義や重複した定義を削除し、以下のように整理します。
+
+// Aboutセクションの基本コンテンツ (AboutMe, Career, Finally がこれを拡張または利用)
+export interface AboutSectionBase { // 名前を変更して明確化
   title: LocalizedString;
-  paragraphs: LocalizedString[]; // 各段落をLocalizedStringの配列として扱う
-  // 必要に応じてリストなども追加可能
 }
 
-export interface AboutMeContent extends Omit<AboutSectionContent, 'paragraphs'> {
-  intro1: LocalizedString; // 「verazzaです...ポリシーは、」
-  // generalMessages.homeDescription2 を参照する部分はIsland側で直接処理
-  policySuffix: LocalizedString; // 「です。」
-  neovimStory: LocalizedString; // Neovimに関する段落
+export interface AboutMeContent extends AboutSectionBase {
+  intro1: LocalizedString;
+  policySuffix: LocalizedString;
+  neovimStory: LocalizedString;
 }
 
-export interface CareerContent extends Omit<AboutSectionContent, 'paragraphs'> {
-  // 経歴の各時期やエピソードをオブジェクトの配列として持つことも可能
-  // ここでは簡略化のため、段落の配列とする
+export interface CareerContent extends AboutSectionBase {
   paragraphs: LocalizedString[];
 }
 
-export interface FinallyContent extends Omit<AboutSectionContent, 'paragraphs' | 'title'> {
-  title: LocalizedString; // 「最後に」
-  // リンクを含む段落はIsland側で組み立てるため、ここでは主要なテキストパーツのキーを持つ
-  // 例: finalParagraphPart1, myBlogLinkText など (translations.tsで定義)
+// 「最後に」セクションの新しい構造のための型
+export type KnownLinkIds = 'myBlog' | 'qiita' | 'projects';
+
+export type TextSegment = {
+  type: 'text';
+  key: keyof typeof aboutPageStrings; // aboutPageStrings のキーであることを示す
+};
+
+export type LinkSegment = {
+  type: 'link';
+  linkId: KnownLinkIds;
+};
+
+export type Segment = TextSegment | LinkSegment;
+
+export interface ParagraphStructure {
+  segments: Segment[];
 }
 
+export interface FinallyContentStructure extends AboutSectionBase { // AboutSectionBaseを継承してtitleを持つ
+  paragraphs: ParagraphStructure[];
+}
+
+// AboutData 全体の型 (これが唯一の定義となるようにする)
 export interface AboutData {
   aboutMe: AboutMeContent;
   career: CareerContent;
-  finally: FinallyContent;
+  finally: FinallyContentStructure; // ★ 更新された型を使用
 }

@@ -70,3 +70,10 @@ export const FormattedTextRenderer = ({ text, lang }: { text: LocalizedString | 
   // ★ key を文字列に変換 (例: i.toString() または String(i))
   return <>{parts.map((part, i) => <Fragment key={String(i)}>{part}</Fragment>)}</>;
 };
+
+// 翻訳とインラインコードスタイル適用をまとめたヘルパー
+export const formatHtml = (textInput: LocalizedString | string | undefined, lang: Language): string => {
+  if (!textInput) return "";
+  const translated = typeof textInput === 'string' ? textInput : translate(textInput, lang);
+  return styleInlineCodeToHtml(translated);
+};

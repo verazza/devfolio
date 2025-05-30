@@ -1,80 +1,98 @@
 // app/islands/AboutContent.tsx
-import { usePageLang } from '../hooks/pageLang'; import { translate } from '../utils/i18n';
-import { styleInlineCodeToHtml } from '../utils/textFormatters'; // ★ 新しい関数をインポート
-import type { AboutData } from '../types/about';
-import type { ProfileData } from '../types/profile'; // ProfileDataの型定義パスを確認
+import { Fragment } from 'hono/jsx';
+import { usePageLang } from '../hooks/pageLang';
+import { translate } from '../utils/i18n'; // translate を直接使う箇所もあるため残す
+import { formatHtml } from '../utils/textFormatters'; // ★ 修正された formatHtml を想定
+import type { AboutData, Segment, KnownLinkIds, ParagraphStructure } from '../types/about'; // ParagraphStructureもインポート
+import type { ProfileData } from '../types/profile';
+import type { Language, LocalizedString } from '../types/common'; // LocalizedStringもインポート
 import { generalMessages, aboutPageStrings } from '../locales/translations';
-import type { LocalizedString } from '../types/common'; // または適切な場所から
 
 type AboutContentProps = {
   aboutData: AboutData;
-  profile: Pick<ProfileData, 'social' | 'name'>; // ★ contact も profile から取得するなら追加
+  profile: Pick<ProfileData, 'social' | 'name'>; // contact は profile.json の social に含まれる想定
 };
 
 const AboutContent = ({ aboutData, profile }: AboutContentProps) => {
   const { lang } = usePageLang();
 
-  const policyQuote = generalMessages.homeDescription2
-    ? translate(generalMessages.homeDescription2, lang)
-    : "Policy quote missing";
-
-  // 翻訳とインラインコードスタイル適用をまとめたヘルパー
-  const formatHtml = (textInput: LocalizedString | string | undefined): string => {
-    if (!textInput) return "";
-    const translated = typeof textInput === 'string' ? textInput : translate(textInput, lang);
-    return styleInlineCodeToHtml(translated);
+  const renderSegment = (segment: Segment, segmentIndex: number): any | string | null => { // langを引数から削除 (クロージャで上位のlangを参照)
+    if (segment.type === 'text') {
+      const translationKey = segment.key as keyof typeof aboutPageStrings;
+      const textObject = aboutPageStrings[translationKey]; // 型は LocalizedString | undefined
+      // formatHtml が LocalizedString | string | undefined を受け付けるようにする
+      const textToShow = textObject ? formatHtml(textObject, lang) : `[Missing translation: ${segment.key}]`;
+      return <span dangerouslySetInnerHTML={{ __html: textToShow }} />;
+    } else if (segment.type === 'link') {
+      switch (segment.linkId) { // ★ 'as KnownLinkIds' を削除
+        case 'myBlog':
+          return (
+            <a href="/blog" class="text-blue-400 underline hover:text-blue-300">
+              {formatHtml(aboutPageStrings.myBlogLinkText, lang)}
+            </a>
+          );
+        case 'qiita':
+          if (profile.social?.qiita?.url && profile.social?.github?.id) {
+            return (
+              <a href={profile.social.qiita.url} class="text-blue-400 underline hover:text-blue-300" target="_blank" rel="noopener noreferrer">
+                {formatHtml(aboutPageStrings.qiitaUserPrefix, lang)}{profile.social.github.id}
+              </a>
+            );
+          }
+          return null;
+        case 'projects':
+          return (
+            <a href="/projects" class="text-blue-400 underline hover:text-blue-300">
+              {formatHtml(aboutPageStrings.projectsLinkText, lang)}
+            </a>
+          );
+        default:
+          const exhaustiveCheck: never = segment.linkId;
+          console.warn(`Unknown linkId: ${exhaustiveCheck}`);
+          return <span>[Unknown Link]</span>;
+      }
+    }
+    return null;
   };
+
+  const policyQuote = generalMessages.homeDescription2
+    ? translate(generalMessages.homeDescription2, lang) // policyQuoteはプレーンテキストと仮定
+    : "Policy quote missing";
 
   return (
     <section class="mt-8 space-y-8 text-gray-300">
-      {/* 私についてセクション */}
       <article>
-        <h2 class="text-2xl font-semibold text-gray-100" dangerouslySetInnerHTML={{ __html: formatHtml(aboutData.aboutMe.title) }} />
+        <h2 class="text-2xl font-semibold text-gray-100" dangerouslySetInnerHTML={{ __html: formatHtml(aboutData.aboutMe.title, lang) }} />
         <div class="mt-4 space-y-4">
-          <p dangerouslySetInnerHTML={{ __html: formatHtml(aboutData.aboutMe.intro1) }} />
+          <p dangerouslySetInnerHTML={{ __html: formatHtml(aboutData.aboutMe.intro1, lang) }} />
           <p class="mt-6 text-lg text-center">
-            「{policyQuote}」<span dangerouslySetInnerHTML={{ __html: formatHtml(aboutData.aboutMe.policySuffix) }} />
+            「{policyQuote}」<span dangerouslySetInnerHTML={{ __html: formatHtml(aboutData.aboutMe.policySuffix, lang) }} />
           </p>
-          <p dangerouslySetInnerHTML={{ __html: formatHtml(aboutData.aboutMe.neovimStory) }} />
+          <p dangerouslySetInnerHTML={{ __html: formatHtml(aboutData.aboutMe.neovimStory, lang) }} />
         </div>
       </article>
 
-      {/* 経歴セクション */}
       <article>
-        <h2 class="text-2xl font-semibold text-gray-100 mt-8" dangerouslySetInnerHTML={{ __html: formatHtml(aboutData.career.title) }} />
+        <h2 class="text-2xl font-semibold text-gray-100 mt-8" dangerouslySetInnerHTML={{ __html: formatHtml(aboutData.career.title, lang) }} />
         <div class="mt-4 space-y-4">
           {aboutData.career.paragraphs.map((p, index) => (
-            <p key={`career-p-${index}`} dangerouslySetInnerHTML={{ __html: formatHtml(p) }} />
+            <p key={`career-p-${index}`} dangerouslySetInnerHTML={{ __html: formatHtml(p, lang) }} />
           ))}
         </div>
       </article>
 
-      {/* 最後にセクション */}
       <article>
-        <h2 class="text-2xl font-semibold text-gray-100 mt-8" dangerouslySetInnerHTML={{ __html: formatHtml(aboutData.finally.title) }} />
+        <h2 class="text-2xl font-semibold text-gray-100 mt-8" dangerouslySetInnerHTML={{ __html: formatHtml(aboutData.finally.title, lang) }} />
         <div class="mt-4">
-          <p>
-            <span dangerouslySetInnerHTML={{ __html: formatHtml(aboutPageStrings.finalParagraphPart1) }} />
-            <a href="/blog" class="text-blue-400 underline hover:text-blue-300">
-              {formatHtml(aboutPageStrings.myBlogLinkText)}
-            </a>
-            <span dangerouslySetInnerHTML={{ __html: formatHtml(aboutPageStrings.finalParagraphPart2) }} />
-            {profile.social?.qiita?.url && profile.social?.github?.id && ( // ★ github.idも存在確認
-              <>
-                <a href={profile.social.qiita.url} class="text-blue-400 underline hover:text-blue-300" target="_blank" rel="noopener noreferrer">
-                  {formatHtml(aboutPageStrings.qiitaUserPrefix)}{profile.social.github.id}
-                </a>
-                <span dangerouslySetInnerHTML={{ __html: formatHtml(aboutPageStrings.finalParagraphPart3) }} />
-              </>
-            )}
-          </p>
-          <p class="mt-2">
-            <span dangerouslySetInnerHTML={{ __html: formatHtml(aboutPageStrings.finalParagraphPart4) }} />
-            <a href="/projects" class="text-blue-400 underline hover:text-blue-300">
-              {formatHtml(aboutPageStrings.projectsLinkText)}
-            </a>
-            <span dangerouslySetInnerHTML={{ __html: formatHtml(aboutPageStrings.finalParagraphPart5) }} />
-          </p>
+          {aboutData.finally.paragraphs.map((paragraph: ParagraphStructure, pIndex: number) => (
+            <p key={`finally-p-${pIndex}`} class={pIndex > 0 ? "mt-2" : ""}>
+              {paragraph.segments.map((segment: Segment, sIndex: number) => (
+                // ★ renderSegment に lang を渡す (またはrenderSegmentがクロージャのlangを使うなら不要)
+                // renderSegmentの定義からlangを削除したので、ここでは不要
+                <Fragment key={`${pIndex}-${sIndex}`}>{renderSegment(segment, sIndex)}</Fragment>
+              ))}
+            </p>
+          ))}
         </div>
       </article>
     </section>
