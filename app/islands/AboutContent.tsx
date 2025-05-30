@@ -34,7 +34,7 @@ const AboutContent = ({ aboutData, profile }: AboutContentProps) => {
         case 'qiita':
           if (profile.social?.qiita?.url && profile.social?.github?.id) {
             return (
-              <a href={profile.social.qiita.url} class="text-blue-400 underline hover:text-blue-300" target="_blank" rel="noopener noreferrer">
+              <a href={`${profile.social.qiita.url}/${profile.social.qiita.url}`} class="text-blue-400 underline hover:text-blue-300" target="_blank" rel="noopener noreferrer">
                 {formatHtml(aboutPageStrings.qiitaUserPrefix, lang)}{profile.social.github.id}
               </a>
             );
