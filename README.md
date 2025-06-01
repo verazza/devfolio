@@ -6,7 +6,7 @@ Repo: [blog](https://github.com/takayamaekawa/blog) is included into this from _
 
 ## Deploy
 - cloudflare/workers  
-see [https://maekawa.dev/](https://maekawa.dev/)
+see [https://maekawa.dev](https://maekawa.dev)
 
 ## Credits
 This project uses other external assets someone creates - see the [CREDITS](CREDITS)
@@ -15,4 +15,4 @@ This project uses other external assets someone creates - see the [CREDITS](CRED
 This project as a whole is licensed under the MIT License.  
 See the [LICENSE](LICENSE) file in the root directory for details.  
   
-However, `public/favicon.ico` and `public/favicon.png` are explicitly excluded from any licensing.
+However, `public/favicon.ico` and `public/favicon.jpg` are explicitly excluded from any licensing.
