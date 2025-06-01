@@ -1,0 +1,24 @@
+{
+  "staff": [
+    {
+      "id": "example_staff",
+      "name": {
+        "text": "山田 太郎",
+        "ruby": "Taro Yamada"
+      },
+      "position": {
+        "ja": "デザイナー",
+        "en": "Designer"
+      },
+      "specialty": {
+        "ja": "イラスト制作、UI/UXデザイン",
+        "en": "Illustration creation, UI/UX design"
+      },
+      "message": {
+        "ja": "ユーザーにとって使いやすく美しいデザインを目指しています。",
+        "en": "Striving for user-friendly and aesthetically pleasing design."
+      },
+      "image": "/images/example.jpg"
+    }
+  ]
+}
