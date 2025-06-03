@@ -3,6 +3,7 @@ import type { Context } from 'hono';
 import RootLayoutIsland from '../islands/RootLayoutIsland';
 import profileData from '../../data/profile.json';
 import siteConfig from '../../data/siteConfig.json';
+import routesData from '../../data/routes.json';
 import { Link, Script } from 'honox/server';
 
 export default jsxRenderer(({ children }, c: Context) => {
@@ -44,6 +45,7 @@ export default jsxRenderer(({ children }, c: Context) => {
             initialLang={ssrInitialLang}
             currentPath={c.req.path}
             siteConfig={siteConfig}
+            routesData={routesData}
           >
             {children}
           </RootLayoutIsland>

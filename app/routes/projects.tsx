@@ -2,8 +2,6 @@
 import { createRoute } from 'honox/factory';
 import profileData from '../../data/profile.json'; import projectsJson from '../../data/projects.json'; // ★ JSONからプロジェクトデータをインポート
 import type { ProjectInfo } from '../types/projects';   // ★ 型をインポート
-import CommonHeader from '../islands/CommonHeader';
-import { generalMessages } from '../locales/translations';
 import ProjectList from '../islands/ProjectList';       // ★ ProjectList Islandをインポート
 
 // 型アサーション
@@ -19,14 +17,7 @@ export default createRoute(async (c) => {
 
   return c.render(
     <>
-      {/* <title>{profileData.name} - Projects</title> */} {/* RootLayoutIslandで設定 */}
-      <div class="mx-auto py-16 px-4 sm:px-6 lg:px-8 max-w-3xl">
-        <CommonHeader
-          titleContent={generalMessages.projectsTitle}
-          descriptionContent={generalMessages.projectsDescription}
-        />
-        <ProjectList projects={allProjectsData} profile={relevantProfileData} /> {/* ★ Islandを使用 */}
-      </div>
+      <ProjectList projects={allProjectsData} profile={relevantProfileData} />
     </>
   );
 });

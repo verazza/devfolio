@@ -1,8 +1,8 @@
 import type { Language } from '../types/common';
 
 export type LanguageOption = {
-  code: Language; // 'ja', 'en', 'ne'
-  nativeName: string; // その言語での表示名 (例: "日本語", "English", "नेपाली")
+  code: Language; // 'ja', 'en'
+  nativeName: string; // その言語での表示名 (例: "日本語", "English")
   englishName: string; // 英語での言語名 (内部的な参照やaria-label用など)
 };
 

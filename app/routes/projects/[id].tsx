@@ -56,14 +56,12 @@ export default createRoute(async (c) => {
   // もし詳細ページを別途作りたい場合は、このリダイレクトロジックは不要
   return c.render(
     <>
-      <div class="mx-auto py-16 px-4 sm:px-6 lg:px-8 max-w-3xl">
-        {/* project.title も翻訳が必要な場合は、このページもIsland化するか、サーバーサイドで言語を決定して渡す */}
-        <h1 class="text-3xl font-bold">{project.title[ssrLang] || project.title.ja}</h1>
-        <p class="mt-4">プロジェクト一覧の該当箇所へリダイレクトします...</p>
-        <p class="mt-8">
-          <a href={redirectUrl} class="text-blue-400 underline">リダイレクトされない場合はこちらをクリック</a>
-        </p>
-      </div>
+      {/* project.title も翻訳が必要な場合は、このページもIsland化するか、サーバーサイドで言語を決定して渡す */}
+      <h1 class="text-3xl font-bold">{project.title[ssrLang] || project.title.ja}</h1>
+      <p class="mt-4">プロジェクト一覧の該当箇所へリダイレクトします...</p>
+      <p class="mt-8">
+        <a href={redirectUrl} class="text-blue-400 underline">リダイレクトされない場合はこちらをクリック</a>
+      </p>
       <script dangerouslySetInnerHTML={{
         __html: `
           if (window.location.hash !== '#${project.id}') { // 現在地が目的のハッシュでなければリダイレクト

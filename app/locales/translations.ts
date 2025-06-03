@@ -9,18 +9,6 @@ export const otherDictionary: Record<string, LocalizedString> = {
 };
 
 export const generalMessages: Record<string, LocalizedString> = {
-  homeTitle: { ja: "ホーム", en: "Home" },
-  homeDescription: { ja: "「前川 鷹哉」って？", en: "Who is 'Takaya Maekawa'?" },
-  homeDescription2: { ja: "VSCodeは使わずCLIライク", en: "CLI-like without VSCode" },
-  homeDescription3: { ja: "NeovimとCLIを愛するフルスタックエンジニアです。安全性・再現性・効率性を大切にしながら、堅牢な開発環境とウェブサービスを構築しています。", en: "I am a full stack engineer who loves Neovim and CLI. I build robust development environments and web services while valuing safety, reproducibility, and efficiency.", },
-  aboutTitle: { ja: "私について", en: "About Me", },
-  aboutDescription: { ja: "私の自己紹介や経歴をお届けします。", en: "I would like to introduce myself and my background.", },
-  projectsTitle: { ja: "プロジェクト", en: "Projects", },
-  projectsDescription: { ja: "過去のプロジェクトや実績などを紹介します。", en: "Past projects and achievements are presented here.", },
-  servicesTitle: { ja: "サービス", en: "Services", },
-  servicesDescription: { ja: "技術提供・運営しているサービス一覧", en: "List of services provided and operated by Technology" },
-  contactTitle: { ja: "コンタクト", en: "Contact", },
-  contactDescription: { ja: "連絡や問い合わせは以下からお願いします。", en: "Please contact us using the information below.", },
   emailLabel: { ja: "メール", en: "Email", },
   tableOfContentsTitle: { ja: "目次", en: "Table of Contents", },
   AboutMeLabel: { ja: "「前川 鷹哉」とは", en: "Who is 'Takaya Maekawa'?", },
@@ -53,7 +41,7 @@ export const projectPageStrings = { // 新しいオブジェクトとして定�
 }
 
 export const aboutPageStrings = {
-  myBlogLinkText: { ja: "私のブログ", en: "my blog" },
+  myBlogLinkText: { ja: "私のブログ", en: "My Blog" },
   qiitaUserPrefix: { ja: "Qiita-@", en: "Qiita-@" },
   projectsLinkText: { ja: "PROJECTS", en: "PROJECTS" },
 
