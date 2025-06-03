@@ -1,0 +1,101 @@
+{
+  "services": {
+    "techBlog": {
+      "title": {
+        "ja": "📝 サンプル技術ブログ",
+        "en": "📝 Sample Tech Blog"
+      },
+      "description1": {
+        "ja": "CLIやツール、セキュリティに関する記事を発信するサンプルです。",
+        "en": "Sample for publishing articles on CLI, tools, and security."
+      },
+      "description2": {
+        "ja": "Qiitaにも同内容を掲載しています。",
+        "en": "Same content is also published on Qiita."
+      },
+      "readBlog": {
+        "ja": "サンプルブログを読む",
+        "en": "Read Sample Blog"
+      },
+      "readQiita": {
+        "ja": "Qiitaで読む",
+        "en": "Read on Qiita"
+      },
+      "or": {
+        "ja": "または",
+        "en": "or"
+      }
+    },
+    "sampleService": {
+      "title": {
+        "ja": "🎮 サンプルサービス",
+        "en": "🎮 Sample Service"
+      },
+      "description1": {
+        "ja": "これはサンプルのサービス紹介文です。",
+        "en": "This is a sample service description."
+      },
+      "description2": {
+        "ja": "多言語対応で世界中の人が利用できます。",
+        "en": "Multilingual support allows people worldwide to use it."
+      },
+      "description3": {
+        "ja": "独自機能や連携もサンプルで実装されています。",
+        "en": "Sample includes unique features and integrations."
+      },
+      "features": [
+        {
+          "ja": "サンプル機能1",
+          "en": "Sample Feature 1"
+        },
+        {
+          "ja": "サンプル機能2",
+          "en": "Sample Feature 2"
+        }
+      ],
+      "portalSite": {
+        "ja": "サンプルポータルサイト: ",
+        "en": "Sample Portal Site: "
+      },
+      "discordTitle": {
+        "ja": "サンプルDiscord: ",
+        "en": "Sample Discord: "
+      },
+      "joinHere": {
+        "ja": "サンプル参加",
+        "en": "Sample Join"
+      }
+    },
+    "otherSites": {
+      "title": {
+        "ja": "🌐 サンプルその他のサイト",
+        "en": "🌐 Sample Other Sites"
+      },
+      "description1": {
+        "ja": "運営中の他のサンプルサイトです。",
+        "en": "Other sample sites I operate."
+      },
+      "description2": {
+        "ja": "興味があればぜひご覧ください。",
+        "en": "Please have a look if you are interested."
+      },
+      "visitSite": {
+        "ja": "サンプルサイトを訪れる",
+        "en": "Visit Sample Site"
+      },
+      "info": [
+        {
+          "name": {
+            "ja": "sample.work",
+            "en": "sample.work"
+          },
+          "description": {
+            "ja": "サンプル情報共有サイト",
+            "en": "Sample information sharing site"
+          },
+          "url": "https://sample.work"
+        }
+      ]
+    }
+  }
+}

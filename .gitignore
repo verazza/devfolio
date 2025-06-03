@@ -5,6 +5,7 @@
 /data/projects.json
 /data/siteConfig.json
 /data/staff.json
+/data/services.json
 wrangler.jsonc
 .wrangler/
 package-lock.json

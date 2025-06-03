@@ -35,27 +35,6 @@ export const generalMessages: Record<string, LocalizedString> = {
   staffHobbyLabel: { ja: "趣味:", en: "Hobby:" },
 };
 
-export const servicesPageStrings = {
-  techBlogTitle: { ja: "📝 技術ブログ", en: "📝 Tech Blog" },
-  techBlogDescription1: { ja: "CLI中心の開発環境、セキュリティ、ツール活用に関する技術記事を不定期に発信中です。", en: "Irregularly publishing technical articles on CLI-centric development environments, security, and tool utilization." },
-  techBlogDescription2: { ja: "Qiitaでも同じく発信しています。", en: "Also publishing on Qiita." },
-  readBlog: { ja: "ブログを読む", en: "Read Blog" },
-  readQiita: { ja: "Qiitaでブログを読む", en: "Read Blog on Qiita" },
-  or: { ja: "もしくは", en: "or" },
-  kishaxTitle: { ja: "🎮 Kishax - Minecraft Server", en: "🎮 Kishax - Minecraft Server" },
-  kishaxDescription1: { ja: "Java版と統合版の両方に対応した、小規模で安全なコミュニティサーバーです。", en: "A small and secure community server supporting both Java and Bedrock Editions." },
-  kishaxDescription2: { ja: "ガイドや説明文などが英語にも対応していて、日本以外の海外の人でも安心して入れます。", en: "Guides and descriptions are also available in English, allowing international players to join with peace of mind." },
-  kishaxDescription3: { ja: "独自プラグインやKishaxアカウント連携により、BOT対策やセキュリティも強化したり、プレイヤーが好きなときにサーバーを起動できる環境が整っています。", en: "Custom plugins and Kishax account integration enhance anti-bot measures and security, providing an environment where players can start the server whenever they like." },
-  kishaxFeature1: { ja: "英語対応でグローバル", en: "English support for global access" },
-  kishaxFeature2: { ja: "いつでも専用のサーバーを起動可能（サバイバル、MOD、マップ等）", en: "Start a dedicated server anytime (Survival, MODs, Maps, etc.)" },
-  kishaxFeature3: { ja: "学生や20代中心のフレンドリーなコミュニティ", en: "A friendly community centered around students and young adults" },
-  kishaxFeature4: { ja: "統合版プレイヤーも参加可能", en: "Bedrock Edition players can also join" },
-  kishaxFeature5: { ja: "開発者・運営メンバー募集中", en: "Recruiting developers and operation members" },
-  kishaxPortalSite: { ja: "編集中のポータルサイト: ", en: "Portal site (under construction): " },
-  kishaxDiscord: { ja: "Discordサーバー: ", en: "Discord Server: " },
-  joinHere: { ja: "参加はこちら", en: "Join Here" },
-};
-
 export const projectPageStrings = { // 新しいオブジェクトとして定義するか、generalMessagesに追加
   viewOnGithub: { ja: "GitHubで見る", en: "View on GitHub" },
   moreInfoPrefix: { ja: "詳しくは、", en: "For more details, check " },
@@ -71,7 +50,7 @@ export const projectPageStrings = { // 新しいオブジェクトとして定�
     ja: "のログインページにログインしたユーザーが該当します。",
     en: "." // 英語の場合はリンクの後にピリオドが自然かもしれません
   }
-};
+}
 
 export const aboutPageStrings = {
   myBlogLinkText: { ja: "私のブログ", en: "my blog" },
