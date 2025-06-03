@@ -5,15 +5,16 @@ import { translate } from '../utils/i18n'; // translate を直接使う箇所も
 import { formatHtml } from '../utils/textFormatters'; // ★ 修正された formatHtml を想定
 import type { AboutData, Segment, KnownLinkIds, ParagraphStructure } from '../types/about'; // ParagraphStructureもインポート
 import type { ProfileData } from '../types/profile';
-import type { Language, LocalizedString } from '../types/common'; // LocalizedStringもインポート
 import { generalMessages, aboutPageStrings } from '../locales/translations';
+import { RoutesJson } from '../types/routes';
 
 type AboutContentProps = {
   aboutData: AboutData;
-  profile: Pick<ProfileData, 'social' | 'name'>; // contact は profile.json の social に含まれる想定
+  profile: Pick<ProfileData, 'social' | 'name'>;
+  routesData: RoutesJson; // Pick<RoutesJson, 'routes'>; // 本当はここで制限したい。
 };
 
-const AboutContent = ({ aboutData, profile }: AboutContentProps) => {
+const AboutContent = ({ aboutData, profile, routesData }: AboutContentProps) => {
   const { lang } = usePageLang();
 
   const renderSegment = (segment: Segment, segmentIndex: number): any | string | null => { // langを引数から削除 (クロージャで上位のlangを参照)
@@ -55,9 +56,8 @@ const AboutContent = ({ aboutData, profile }: AboutContentProps) => {
     return null;
   };
 
-  const policyQuote = generalMessages.homeDescription2
-    ? translate(generalMessages.homeDescription2, lang) // policyQuoteはプレーンテキストと仮定
-    : "Policy quote missing";
+  const policyQuote = translate(routesData.routes.find(route => route.path === '/')?.description2, lang)
+    || "Policy quote missing";
 
   return (
     <section class="mt-8 space-y-8 text-gray-300">
