@@ -1,6 +1,7 @@
 import { usePageLang } from '../hooks/pageLang';
 import { translate } from '../utils/i18n';
-import type { RouteContent } from '../types/routes'; // 更新された型名をインポート
+import type { RouteContent } from '../types/routes';
+import { formatHtml } from '../utils/textFormatters';
 
 type CommonHeaderProps = {
   // 単一のルート情報、または見つからなかった場合は undefined

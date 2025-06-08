@@ -1,11 +1,10 @@
-// app/islands/AboutContent.tsx
 import { Fragment } from 'hono/jsx';
 import { usePageLang } from '../hooks/pageLang';
-import { translate } from '../utils/i18n'; // translate を直接使う箇所もあるため残す
-import { formatHtml } from '../utils/textFormatters'; // ★ 修正された formatHtml を想定
-import type { AboutData, Segment, KnownLinkIds, ParagraphStructure } from '../types/about'; // ParagraphStructureもインポート
+import { translate } from '../utils/i18n';
+import { formatHtml } from '../utils/textFormatters';
+import type { AboutData, Segment, ParagraphStructure } from '../types/about';
 import type { ProfileData } from '../types/profile';
-import { generalMessages, aboutPageStrings } from '../locales/translations';
+import { aboutPageStrings } from '../locales/translations';
 import { RoutesJson } from '../types/routes';
 
 type AboutContentProps = {
