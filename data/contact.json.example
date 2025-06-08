@@ -1,14 +1,32 @@
 {
-  "way": {
-    "discord": {
-      "id": "spacepilot42"
+  "way": [
+    {
+      "label": "Slack",
+      "id": "sample_user",
+      "comment": {
+        "ja": "招待リンクから参加してください。",
+        "en": "Please join via the invitation link."
+      }
     },
-    "x": {
-      "id": "orbit_explorer",
-      "url": "https://x.com/orbit_explorer"
+    {
+      "label": "GitHub",
+      "id": "sampleuser",
+      "url": "https://github.com",
+      "comment": {
+        "ja": "IssueやPull Requestでご連絡ください。",
+        "en": "Contact me via Issues or Pull Requests."
+      }
     },
-    "direct": {
-      "email": "contact@galaxyhub.dev"
+    {
+      "label": {
+        "ja": "電話",
+        "en": "Phone"
+      },
+      "phone": "+81-90-1234-5678",
+      "comment": {
+        "ja": "営業時間内にご連絡ください。",
+        "en": "Please call during business hours."
+      }
     }
-  }
+  ]
 }

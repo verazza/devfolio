@@ -1,16 +1,14 @@
-export type ContactWay = {
-  discord: {
-    id: string;
-  }
-  x: {
-    id: string;
-    url: string;
-  }
-  direct: {
-    email: string;
-  }
+import type { LocalizedString } from './common';
+
+export type ContactMethodInfo = {
+  label: string | LocalizedString;
+  id?: string;
+  url?: string;
+  email?: string;
+  phone?: string;
+  comment: LocalizedString;
 };
 
-export type ContactMe = {
-  way: ContactWay;
+export type ContactData = {
+  way: ContactMethodInfo[];
 };
