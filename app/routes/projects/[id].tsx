@@ -60,7 +60,7 @@ export default createRoute(async (c) => {
       <h1 class="text-3xl font-bold">{project.title[ssrLang] || project.title.ja}</h1>
       <p class="mt-4">プロジェクト一覧の該当箇所へリダイレクトします...</p>
       <p class="mt-8">
-        <a href={redirectUrl} class="text-blue-400 underline">リダイレクトされない場合はこちらをクリック</a>
+        <a href={redirectUrl} class="text-blue-400 text-link">リダイレクトされない場合はこちらをクリック</a>
       </p>
       <script dangerouslySetInnerHTML={{
         __html: `

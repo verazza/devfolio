@@ -39,7 +39,7 @@ const ProjectList = ({ projects, profile }: ProjectListProps) => {
           <span dangerouslySetInnerHTML={{
             __html: translate(generalMessages.moreInfoCheck, lang).replace(
               "{githubProfileLink}",
-              `<a href="${githubProfileUrl}" class="text-blue-400 underline hover:text-blue-300" target="_blank" rel="noopener noreferrer">github-${githubId}</a>`
+              `<a href="${githubProfileUrl}" class="text-blue-400 hover:text-blue-300 text-link" target="_blank" rel="noopener noreferrer">github-${githubId}</a>`
             )
           }}></span>
         </p>

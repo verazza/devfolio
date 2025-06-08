@@ -56,7 +56,7 @@ const ContactCard = ({ method, lang }: { method: ContactMethodInfo, lang: Langua
             href={href}
             target="_blank"
             rel="noopener noreferrer"
-            class="text-blue-400 hover:text-blue-300 transition duration-200 underline break-all"
+            class="text-blue-400 hover:text-blue-300 transition duration-200 underline break-all text-link"
           >
             {displayLabel}
           </a>

@@ -57,18 +57,18 @@ const HamburgerNav = ({ profile, lang, setLang }: HamburgerNavProps) => {
       <div class="w-full flex items-center justify-between px-4 sm:px-6 lg:px-8 h-full">
         {/* ロゴ */}
         <div class="text-gray-100 font-bold text-xl">
-          <a href="/" class="text-gray-100 font-bold text-xl no-underline">
+          <a href="/" class="text-gray-100 font-bold text-xl">
             {profile.name}
           </a>
         </div>
 
         {/* デスクトップメニュー */}
         <div class="hidden md:flex items-center space-x-8">
-          <a href="/" class="text-gray-300 hover:text-blue-500">HOME</a>
-          <a href="/about" class="text-gray-300 hover:text-blue-500">ABOUT</a>
-          <a href="/projects" class="text-gray-300 hover:text-blue-500">PROJECTS</a>
-          <a href="/services" class="text-gray-300 hover:text-blue-500">SERVICES</a>
-          <a href="/contact" class="text-gray-300 hover:text-blue-500">CONTACT</a>
+          <a href="/" class="text-gray-300 hover:text-blue-500 text-link">HOME</a>
+          <a href="/about" class="text-gray-300 hover:text-blue-500 text-link">ABOUT</a>
+          <a href="/projects" class="text-gray-300 hover:text-blue-500 text-link">PROJECTS</a>
+          <a href="/services" class="text-gray-300 hover:text-blue-500 text-link">SERVICES</a>
+          <a href="/contact" class="text-gray-300 hover:text-blue-500 text-link">CONTACT</a>
           <LanguageSwitcherDropdown currentLang={lang} setLang={handleLangSelected} />
         </div>
 
@@ -90,11 +90,11 @@ const HamburgerNav = ({ profile, lang, setLang }: HamburgerNavProps) => {
             style={{ maxHeight: `calc(100vh - ${navbarActualHeight})` }}
           >
             <div class="px-4 py-2 flex flex-col items-center space-y-2">
-              <a href="/" class="text-gray-300 hover:text-blue-500 py-2" onClick={() => setIsOpen(false)}>HOME</a>
-              <a href="/about" class="text-gray-300 hover:text-blue-500 py-2" onClick={() => setIsOpen(false)}>ABOUT</a>
-              <a href="/projects" class="text-gray-300 hover:text-blue-500 py-2" onClick={() => setIsOpen(false)}>PROJECTS</a>
-              <a href="/services" class="text-gray-300 hover:text-blue-500 py-2" onClick={() => setIsOpen(false)}>SERVICES</a>
-              <a href="/contact" class="text-gray-300 hover:text-blue-500 py-2" onClick={() => setIsOpen(false)}>CONTACT</a>
+              <a href="/" class="text-gray-300 hover:text-blue-500 py-2 text-link" onClick={() => setIsOpen(false)}>HOME</a>
+              <a href="/about" class="text-gray-300 hover:text-blue-500 py-2 text-link" onClick={() => setIsOpen(false)}>ABOUT</a>
+              <a href="/projects" class="text-gray-300 hover:text-blue-500 py-2 text-link" onClick={() => setIsOpen(false)}>PROJECTS</a>
+              <a href="/services" class="text-gray-300 hover:text-blue-500 py-2 text-link" onClick={() => setIsOpen(false)}>SERVICES</a>
+              <a href="/contact" class="text-gray-300 hover:text-blue-500 py-2 text-link" onClick={() => setIsOpen(false)}>CONTACT</a>
             </div>
           </div>
         )}

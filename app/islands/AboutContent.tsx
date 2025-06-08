@@ -28,14 +28,14 @@ const AboutContent = ({ aboutData, profile, routesData }: AboutContentProps) => 
       switch (segment.linkId) { // ★ 'as KnownLinkIds' を削除
         case 'myBlog':
           return (
-            <a href="/blog" class="text-blue-400 underline hover:text-blue-300">
+            <a href="/blog" class="text-blue-400 hover:text-blue-300 text-link">
               {formatHtml(aboutPageStrings.myBlogLinkText, lang)}
             </a>
           );
         case 'qiita':
           if (profile.social?.qiita?.url && profile.social?.github?.id) {
             return (
-              <a href={`${profile.social.qiita.url}/${profile.social.qiita.id}`} class="text-blue-400 underline hover:text-blue-300" target="_blank" rel="noopener noreferrer">
+              <a href={`${profile.social.qiita.url}/${profile.social.qiita.id}`} class="text-blue-400 hover:text-blue-300 text-link" target="_blank" rel="noopener noreferrer">
                 {formatHtml(aboutPageStrings.qiitaUserPrefix, lang)}{profile.social.github.id}
               </a>
             );
@@ -43,7 +43,7 @@ const AboutContent = ({ aboutData, profile, routesData }: AboutContentProps) => 
           return null;
         case 'projects':
           return (
-            <a href="/projects" class="text-blue-400 underline hover:text-blue-300">
+            <a href="/projects" class="text-blue-400 hover:text-blue-300 text-link">
               {formatHtml(aboutPageStrings.projectsLinkText, lang)}
             </a>
           );

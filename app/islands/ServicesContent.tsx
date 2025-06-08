@@ -24,9 +24,9 @@ const ServicesContent = ({ profile, services }: ServicesContentProps) => {
           {translate(services.techBlog.description2, lang)}
         </p>
         <div class="mt-6 flex space-x-4 items-center text-blue-400 leading-none">
-          <a href="/blog" rel="noopener noreferrer" target="_blank" class="hover:text-blue-300">{translate(services.techBlog.readBlog, lang)}</a>
+          <a href="/blog" rel="noopener noreferrer" target="_blank" class="hover:text-blue-300 text-link">{translate(services.techBlog.readBlog, lang)}</a>
           <span class="text-gray-400 not-italic">{translate(services.techBlog.or, lang)}</span>
-          <a href={`${profile.social.qiita.url}/${profile.social.qiita.id}`} rel="noopener noreferrer" target="_blank" class="hover:text-blue-300">{translate(services.techBlog.readQiita, lang)}</a>
+          <a href={`${profile.social.qiita.url}/${profile.social.qiita.id}`} rel="noopener noreferrer" target="_blank" class="hover:text-blue-300 text-link">{translate(services.techBlog.readQiita, lang)}</a>
         </div>
       </article>
 
@@ -45,9 +45,9 @@ const ServicesContent = ({ profile, services }: ServicesContentProps) => {
           ))}
         </ul>
         <p class="mt-2 text-gray-400">
-          {translate(services.kishax.portalSite, lang)}<a href={profile.social.kishax.page.url} class="text-blue-400 underline hover:text-blue-300" rel="noopener noreferrer" target="_blank">kishax.net</a>
+          {translate(services.kishax.portalSite, lang)}<a href={profile.social.kishax.page.url} class="text-blue-400 underline hover:text-blue-300 text-link" rel="noopener noreferrer" target="_blank">kishax.net</a>
           <br /><br />
-          {translate(services.kishax.discordTitle, lang)}<a href={profile.social.kishax.discord.url} class="text-blue-400 underline hover:text-blue-300" rel="noopener noreferrer" target="_blank">{translate(services.kishax.joinHere, lang)}</a>
+          {translate(services.kishax.discordTitle, lang)}<a href={profile.social.kishax.discord.url} class="text-blue-400 underline hover:text-blue-300 text-link" rel="noopener noreferrer" target="_blank">{translate(services.kishax.joinHere, lang)}</a>
         </p>
       </article>
       <article>
@@ -69,7 +69,7 @@ const ServicesContent = ({ profile, services }: ServicesContentProps) => {
             </div>
             {/* リンクの行 */}
             <div>
-              <a href={site.url} rel="noopener noreferrer" target="_blank" class="text-blue-400 hover:text-blue-300 hover:underline">
+              <a href={site.url} rel="noopener noreferrer" target="_blank" class="text-blue-400 hover:text-blue-300 hover:underline text-link">
                 {visitText || site.url} {/* visitTextがない場合のフォールバック */}
               </a>
             </div>
