@@ -26,9 +26,7 @@ const CommonHeader = ({ routeContent }: CommonHeaderProps) => {
         </p>
       )}
       {routeContent.description3 && (
-        <p class="mt-4 text-gray-400">
-          {translate(routeContent.description3, lang)}
-        </p>
+        <p class="mt-4 text-gray-400" dangerouslySetInnerHTML={{ __html: formatHtml(routeContent.description3, lang) }} />
       )}
     </header>
   );
