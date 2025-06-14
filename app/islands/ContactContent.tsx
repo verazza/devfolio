@@ -40,7 +40,7 @@ const ContactCard = ({ method, lang }: { method: ContactMethodInfo, lang: Langua
   } else {
     // 将来的に他のタイプが増えた場合のフォールバック
     href = method.url;
-    displayLabel = method.id || '';
+    displayLabel = `@${method.id}` || '';
   }
 
   return (
